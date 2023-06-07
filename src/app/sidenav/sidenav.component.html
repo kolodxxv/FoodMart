@@ -1,4 +1,6 @@
 <mat-toolbar>
+  <!-- Responsive view -->
+  <div class="responsive-container" fxHide fxShow.lt-md>
     <mat-toolbar-row>
       <button mat-icon-button id="menu-button" (click)="sidenav.toggle()">
         <mat-icon id="menu-icon">menu</mat-icon>
@@ -7,18 +9,53 @@
         <input type="search" id="search-input" placeholder="Search">
       </form>
       <!-- TODO HOME ROUTING -->
-      <mat-icon id="logo-icon">fastfood</mat-icon>
+      <mat-icon id="logo-icon" fxHide fxShow.lt-md>fastfood</mat-icon>
     </mat-toolbar-row>
-  </mat-toolbar>
+  </div>
+  <!-- Regular view -->
+  <div class="regular-container" fxShow fxHide.lt-md>
+    <img alt="logo" id="logo-image" src="assets/img/untitled.svg">
+    <form class="search-form-reg">
+      <input type="search" id="search-input-reg" placeholder="Search">
+    </form>
+    <button mat-button id="signin-button">
+      <span>Log In</span>
+      <mat-icon>account_circle</mat-icon>      
+    </button>
+    <button mat-button id="cart-button">
+      <span>Cart</span>
+      <mat-icon>shopping_cart</mat-icon>      
+    </button>
+  </div>   
+</mat-toolbar>
+  <!-- Sidebar Menu -->
   <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #sidenav mode="side" position="end">
+    <mat-sidenav #sidenav mode="over" position="end" fixedInViewport="fixed">
+      <button mat-icon-button id="close-menu-button" (click)="sidenav.close()">
+        <mat-icon id="close-icon">close</mat-icon>
+      </button>
       <mat-nav-list>
-        <a mat-list-item>Home</a>
-        <a mat-list-item>Account</a>
-        <a mat-list-item>Basket</a>
-        <a mat-list-item>Restaurants</a>
-        <a mat-list-item>Cousine</a>
-        <a mat-list-item>About Us</a>
+        <h1 id="greet-nav">Hey there!</h1>
+        <mat-list-item> 
+          <mat-icon matListItemIcon>home</mat-icon>
+          <span matLine>Home</span>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon matListItemIcon>account_circle</mat-icon>
+          <span matLine>Account</span>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon matListItemIcon>shopping_cart</mat-icon>
+          <span matLine>Cart</span>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon matListItemIcon>info</mat-icon>
+          <span matLine>Info</span>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon matListItemIcon>logout</mat-icon>
+          <span matLine>Logout</span>
+        </mat-list-item>
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
