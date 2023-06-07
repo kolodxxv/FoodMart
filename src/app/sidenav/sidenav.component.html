@@ -1,0 +1,31 @@
+<mat-toolbar>
+    <mat-toolbar-row>
+      <button mat-icon-button id="menu-button" (click)="sidenav.toggle()">
+        <mat-icon id="menu-icon">menu</mat-icon>
+      </button>
+      <form class="search-form">
+        <input type="search" id="search-input" placeholder="Search">
+      </form>
+      <!-- TODO HOME ROUTING -->
+      <mat-icon id="logo-icon">fastfood</mat-icon>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="side" position="end">
+      <mat-nav-list>
+        <a mat-list-item>Home</a>
+        <a mat-list-item>Account</a>
+        <a mat-list-item>Basket</a>
+        <a mat-list-item>Restaurants</a>
+        <a mat-list-item>Cousine</a>
+        <a mat-list-item>About Us</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div style="height: 88vh;">
+        <router-outlet>
+        </router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

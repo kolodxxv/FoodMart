@@ -1,0 +1,52 @@
+mat-toolbar {
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    height: 145px;
+}
+
+mat-sidenav {
+    width: 200px;
+}
+
+#menu-button {
+    position: absolute;
+    right: 0;
+}
+
+#menu-icon {
+    transform: scale(1.7);
+    color: black;
+    background-color: rgb(225, 225, 225);
+    border-radius: 7px;
+}
+
+#logo-icon {
+    position: absolute;
+    transform: scale(2);
+    color: rgb(237, 42, 179);
+    left: 20px;
+    top: 25px
+}
+
+
+.search-form {
+    // Responsive version
+    position: relative;
+    top: 77px;
+    width: 100%;
+
+}
+
+#search-input {
+    width: 100%;
+    border-radius: 15px;
+    height: 50px;
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") 
+    no-repeat 13px center;
+    padding: 9px 4px 9px 50px;
+    font-size: large;
+}
+
+
+
+
