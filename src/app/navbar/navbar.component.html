@@ -29,7 +29,7 @@
   </div>   
 </mat-toolbar>
   <!-- Sidebar Menu -->
-  <mat-sidenav-container class="sidenav-container">
+  <mat-sidenav-container class="sidenav-container" autosize>
     <mat-sidenav #sidenav mode="over" position="end" fixedInViewport="fixed">
       <button mat-icon-button id="close-menu-button" (click)="sidenav.close()">
         <mat-icon id="close-icon">close</mat-icon>
@@ -59,7 +59,7 @@
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-      <div style="height: 88vh;">
+      <div style="height: 30vh;">
         <router-outlet>
         </router-outlet>
       </div>
