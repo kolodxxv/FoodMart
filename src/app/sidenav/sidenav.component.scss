@@ -5,7 +5,7 @@ mat-toolbar {
 }
 
 mat-sidenav {
-    width: 200px;
+    width: 350px;
 }
 
 #menu-button {
@@ -28,6 +28,24 @@ mat-sidenav {
     top: 25px
 }
 
+#close-menu-button {
+    position: absolute;
+    right: 0;
+}
+
+#greet-nav {
+    text-indent: 20px;
+    font-size: 28px;
+    font-weight: 500;
+    // top: 20px
+}
+
+#logo-image {
+    position: absolute;
+    width: 400px;
+    height: 150px;
+}
+
 
 .search-form {
     // Responsive version
@@ -45,6 +63,39 @@ mat-sidenav {
     no-repeat 13px center;
     padding: 9px 4px 9px 50px;
     font-size: large;
+}
+
+// Regular view
+
+.search-form-reg {
+    position: relative;
+    width: 40%;
+    left: 475px;
+    top: 45px;
+}
+
+#search-input-reg {
+    width: 55%;
+    border-radius: 15px;
+    height: 50px;
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") 
+    no-repeat 13px center;
+    padding: 9px 4px 9px 50px;
+    font-size: large;
+}
+
+#signin-button {
+    position: absolute;
+    right: 55px;
+    color: black;
+    transform: scale(1.7);
+}
+
+#cart-button {
+    position: absolute;
+    right: 195px;
+    color: black;
+    transform: scale(1.7);
 }
 
 
