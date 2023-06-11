@@ -1,0 +1,19 @@
+<!-- <ng-container *ngFor="let item of foodArr">
+  <p (click)="selectType.emit(item)">{{ item.textValue }}</p>
+</ng-container> -->
+
+<section class="product">
+  <div class="container-fluid">
+      <div class="slider-wrap">
+        <div class="slider-main">
+          <div class="item" *ngFor="let item of foodArr">
+            <div class="text" (click)="selectType.emit(item)">{{ item.textValue }}</div>
+          </div>
+        </div>
+        <div class="button-area">
+          <button type="button" class="prev" appPrev>Prev</button>
+          <button type="button" class="next" appNext>Next</button>
+        </div>
+      </div>
+  </div>
+</section>
