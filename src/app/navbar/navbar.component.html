@@ -1,19 +1,17 @@
 <mat-toolbar>
   <!-- Responsive view -->
-  <div class="responsive-container" fxHide fxShow.lt-md>
-    <mat-toolbar-row>
-      <button mat-icon-button id="menu-button" (click)="sidenav.toggle()">
-        <mat-icon id="menu-icon">menu</mat-icon>
-      </button>
-      <form class="search-form">
-        <input type="search" id="search-input" placeholder="Search">
-      </form>
-      <!-- TODO HOME ROUTING -->
-      <mat-icon id="logo-icon" fxHide fxShow.lt-md>fastfood</mat-icon>
-    </mat-toolbar-row>
-  </div>
+  <mat-toolbar-row class="responsive" *ngIf="responsive">
+    <button mat-icon-button id="menu-button" (click)="sidenav.toggle()">
+      <mat-icon id="menu-icon">menu</mat-icon>
+    </button>
+    <form class="search-form">
+      <input type="search" id="search-input" placeholder="Search">
+    </form>
+    <!-- TODO HOME ROUTING -->
+    <mat-icon id="logo-icon">fastfood</mat-icon>
+  </mat-toolbar-row>
   <!-- Regular view -->
-  <div class="regular-container" fxShow fxHide.lt-md>
+  <mat-toolbar-row class="regular" *ngIf="responsive === false">
     <img alt="logo" id="logo-image" src="assets/img/untitled.svg">
     <form class="search-form-reg">
       <input type="search" id="search-input-reg" placeholder="Search">
@@ -26,10 +24,10 @@
       <span>Cart</span>
       <mat-icon>shopping_cart</mat-icon>      
     </button>
-  </div>   
+  </mat-toolbar-row>   
 </mat-toolbar>
   <!-- Sidebar Menu -->
-  <mat-sidenav-container class="sidenav-container" autosize>
+  <mat-sidenav-container class="sidenav-container" >
     <mat-sidenav #sidenav mode="over" position="end" fixedInViewport="fixed">
       <button mat-icon-button id="close-menu-button" (click)="sidenav.close()">
         <mat-icon id="close-icon">close</mat-icon>
@@ -59,10 +57,13 @@
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-      <div style="height: 30vh;">
-        <router-outlet>
-        </router-outlet>
+      <div style="height: 40vh;">
+        <h1>Here Will be a picture of banner</h1>
       </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
+
+
+
+  
   

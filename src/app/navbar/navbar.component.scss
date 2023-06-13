@@ -1,24 +1,57 @@
-mat-toolbar {
+mat-toolbar .regular {
     color: rgb(255, 255, 255);
-    background-color: transparent;
+    background-color: white;
+    height: 100px;
+
+    .search-form-reg {
+        position: relative;
+        width: 40%;
+        left: 740px;
+        top: 5px;
+    }
+}
+
+mat-toolbar .responsive {
+    color: rgb(255, 255, 255);
+    background-color: white;
     height: 145px;
+    
+    .search-form {
+        position: relative;
+        top: 40px;
+        width: 100%;
+    }
+
+    #menu-button {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+
+    #menu-icon {
+        transform: scale(1.7);
+        color: black;
+        background-color: rgb(225, 225, 225);
+        border-radius: 7px;
+    }
+}
+
+
+
+#logo-image {
+    position: absolute;
+    width: 300px;
+    height: 150px;
 }
 
 mat-sidenav {
     width: 350px;
 }
 
-#menu-button {
-    position: absolute;
-    right: 0;
+.regular {
+    height: 140px;
 }
 
-#menu-icon {
-    transform: scale(1.7);
-    color: black;
-    background-color: rgb(225, 225, 225);
-    border-radius: 7px;
-}
 
 #logo-icon {
     position: absolute;
@@ -40,21 +73,6 @@ mat-sidenav {
     // top: 20px
 }
 
-#logo-image {
-    position: absolute;
-    width: 400px;
-    height: 150px;
-}
-
-
-.search-form {
-    // Responsive version
-    position: relative;
-    top: 77px;
-    width: 100%;
-
-}
-
 #search-input {
     width: 100%;
     border-radius: 15px;
@@ -67,12 +85,7 @@ mat-sidenav {
 
 // Regular view
 
-.search-form-reg {
-    position: relative;
-    width: 40%;
-    left: 475px;
-    top: 45px;
-}
+
 
 #search-input-reg {
     width: 55%;
