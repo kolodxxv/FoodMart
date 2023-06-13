@@ -11,6 +11,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppRoutingModule } from '../app-routing.module';
 
 import { NavbarComponent } from './navbar.component';
+import { ResizeDirective } from './resize.directive';
 
 @NgModule({
   imports: [
@@ -23,9 +24,10 @@ import { NavbarComponent } from './navbar.component';
     MatToolbarModule,
     MatInputModule,
     FlexLayoutModule,
-    AppRoutingModule
+    AppRoutingModule,
+    
   ],
-  declarations: [NavbarComponent],
+  declarations: [NavbarComponent, ResizeDirective],
   exports: [NavbarComponent],
   bootstrap: [],
 })
