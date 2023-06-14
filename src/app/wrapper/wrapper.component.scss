@@ -31,12 +31,20 @@
   color: rgb(225, 225, 225);
   opacity: 1;
   cursor: pointer;
-  background: rgb(245, 138, 213);
+  background: rgb(238, 236, 236);
 
   .service:after {
       border-color: rgb(184, 57, 175);
       word-wrap: break-word;
   }
+}
+
+span {
+  color: black;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  word-break: break-word;
 }
 
 // 
