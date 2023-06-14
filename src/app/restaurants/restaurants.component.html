@@ -1,1 +1,9 @@
-<router-outlet name="restaurants"><h1>Restaurants</h1></router-outlet>
+<router-outlet name="restaurants">
+  <h1>Restaurants</h1>
+  <div class="container">
+    <li class="item" *ngFor="let restaurant of restaurantsArray">
+      <img alt="provider-img" src="{{restaurant.img}}">
+      <div>{{restaurant.label}}</div>
+    </li>
+  </div>
+</router-outlet>
