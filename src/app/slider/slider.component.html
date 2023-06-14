@@ -7,7 +7,10 @@
         <div class="slider-wrap">
           <div class="slider-main">
             <div class="item" *ngFor="let item of foodArr">
-              <div class="text" (click)="selectType.emit(item)">{{ item.textValue }}</div>
+              <div class="image-container">
+                <img class="type-image" alt="img" src="{{ item.img }}">
+              </div>
+              <p class="text" (click)="selectType.emit(item)">{{ item.textValue }}</p>
             </div>
           </div>
           <div class="button-area">

@@ -2,12 +2,18 @@
 
 .service-buttons {
   display: flex;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
   justify-content: space-between;
+  width: 89%;
+  gap: 20px;
   padding: 10px;
+  position: relative;
+  background: #FFFFFF;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
-  background: #FFFFFF;
+  
 }
 
 .service { 
@@ -27,8 +33,8 @@
   cursor: pointer;
   background: rgb(245, 138, 213);
 
-  *, *::before, ::after {
-      border-color: gray;
+  .service:after {
+      border-color: rgb(184, 57, 175);
       word-wrap: break-word;
   }
 }

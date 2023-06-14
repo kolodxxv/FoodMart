@@ -15,19 +15,23 @@
 
 .item {
   display: inline-block;
-  width: 500px;
+  width: 200px;
   height: 300px;
-  background: red;
+  background: transparent;
   position: relative;
   margin: 0 12px;
 }
 
 .text {
-  position: absolute;
-  top: 20%;
-  left: 30%;
-  color: white;
-  font-size: 19px;
+  font-weight: 600;
+  overflow: hidden;
+  // top: 20%;
+  // left: 30%;
+  color: black;
+  font-size: 16px;
+  height: 24px;
+  text-align: center;
+  padding-inline: 3px;
 }
 
 .prev {
@@ -43,3 +47,13 @@
   top: 35%;
   transform: translate(-50%, -50%);
 }
+
+.image-container {
+  height: 100px;
+  width: 100%;
+}
+
+// .type-image {
+//   width: 100%;
+
+// }
