@@ -1,17 +1,15 @@
 
 <!-- Main Page buttons -->
 <div class="service-buttons" >
-  <a class="service" appHower>
-    <span>Restaurants</span></a>
-  <a class="service" appHower>
-    <span>Shops</span>
-  </a>
-  <a class="service" appHower>
-    <span>Courier</span>
-  </a>
+  <a *ngFor="let item of items; let i = index"
+    [ngClass]="{'active-service': selectedIndex ===i, 'service': !toggle}"
+    (click)="selectedIndex=i">
+    <span>{{item}}</span></a>
 </div>
 
 
 
 <!-- Slider Component -->
-<app-slider-component name="slider" [foodArr]="foodArr" (selectType)="selectType($event)"></app-slider-component>
+<app-slider-component name="slider" [foodArr]="foodArr" 
+                      (selectType)="selectType($event)">
+</app-slider-component>

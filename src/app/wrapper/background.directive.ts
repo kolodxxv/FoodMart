@@ -1,9 +1,9 @@
 import { Directive, HostBinding, HostListener } from '@angular/core';
 
 @Directive({
-  selector: '[appHower]'
+  selector: '[appBackground]'
 })
-export class HowerDirective {
+export class BackgroundDirective {
 
   @HostBinding('style.backgroundColor') backgroundColor!: string;
 

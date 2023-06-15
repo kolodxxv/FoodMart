@@ -6,7 +6,7 @@ import { WrapperComponent } from './wrapper.component';
 import { SliderModule } from '../slider/slider.module';
 import { RestaurantsModule } from '../restaurants/restaurants.module';
 import { ShopsModule } from '../shops/shops.module';
-import { HowerDirective } from './hower.directive';
+import { BackgroundDirective } from './background.directive';
 
 
 
@@ -14,7 +14,7 @@ import { HowerDirective } from './hower.directive';
 @NgModule({
   declarations: [
     WrapperComponent,
-    HowerDirective
+    BackgroundDirective
   ],
   imports: [
     CommonModule,
@@ -26,4 +26,4 @@ import { HowerDirective } from './hower.directive';
   exports: [WrapperComponent],
   bootstrap: [],
 })
-export class WrapperModule { }
+export class WrapperModule {}
