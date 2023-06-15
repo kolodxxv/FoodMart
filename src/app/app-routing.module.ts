@@ -7,7 +7,7 @@ import { WrapperRoutingModule } from './wrapper/wrapper-routing.module';
 
 
 const routes: Routes = [
-  // { path: 'wrapper', component: WrapperComponent },
+  { path: 'wrapper', component: WrapperComponent },
   
   
   ];

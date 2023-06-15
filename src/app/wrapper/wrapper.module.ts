@@ -6,13 +6,15 @@ import { WrapperComponent } from './wrapper.component';
 import { SliderModule } from '../slider/slider.module';
 import { RestaurantsModule } from '../restaurants/restaurants.module';
 import { ShopsModule } from '../shops/shops.module';
+import { HowerDirective } from './hower.directive';
 
 
 
 
 @NgModule({
   declarations: [
-    WrapperComponent
+    WrapperComponent,
+    HowerDirective
   ],
   imports: [
     CommonModule,
