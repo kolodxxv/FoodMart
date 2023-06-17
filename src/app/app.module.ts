@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavbarModule } from './navbar/navbar.module';
 import { WrapperModule } from './wrapper/wrapper.module';
+import { LoginModule } from './login/login.module';
 
 
 
@@ -16,7 +17,8 @@ import { WrapperModule } from './wrapper/wrapper.module';
     AppRoutingModule,
     NavbarModule,
     RouterModule,
-    WrapperModule
+    WrapperModule,
+    LoginModule
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],
