@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-restaurants',
+  selector: 'app-restaurants-component',
   templateUrl: './restaurants.component.html',
   styleUrls: ['./restaurants.component.scss']
 })
 export class RestaurantsComponent {
-
+  
   public restaurantsArray: any[] = [
     {id: 1, label: 'Star Kebab', foodTypeShortLabel: 'kb', foodTypeId: '10', 
   img: 'https://straus.s3.amazonaws.com/media/CACHE/images/providers/4b54634acfbf4092a8c2e25ad2e08374/c8aac9790ba4afa329e940ac5d98e8c9.png' },
@@ -16,5 +16,4 @@ export class RestaurantsComponent {
   img: 'https://straus.s3.amazonaws.com/media/CACHE/images/providers/09d41069f29f41759aa6bce131480b69/f9cd251e2d34ecb9b058926f68006fe2.jpg'},
   
   ]
-
 }

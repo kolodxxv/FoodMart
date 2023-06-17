@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { WrapperComponent } from './wrapper.component';
-import { RestaurantsComponent } from '../restaurants/restaurants.component';
-import { ShopsComponent } from '../shops/shops.component';
+import { ShopsComponent } from '../outlet/shops/shops.component';
+import { RestaurantsComponent } from '../outlet/restaurants/restaurants.component';
 
 const routes: Routes = [
-  { path: '', component: WrapperComponent },
-  { path: 'restaurants', component: RestaurantsComponent},
-  { path: 'shops', component: ShopsComponent}]
+  { path: '', component: WrapperComponent, children: [
+    { path: '', component: RestaurantsComponent, outlet: 'restaurants' },
+    { path: '', component: ShopsComponent, outlet: 'shops'},
+  ]}, 
+]
+ 
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

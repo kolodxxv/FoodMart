@@ -6,11 +6,7 @@ import { WrapperRoutingModule } from './wrapper/wrapper-routing.module';
 
 
 
-const routes: Routes = [
-  // { path: 'wrapper', component: WrapperComponent },
-  
-  
-  ];
+const routes: Routes = [ {path: '', component: WrapperComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes),

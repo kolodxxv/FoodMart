@@ -25,6 +25,11 @@ export class WrapperComponent {
     { id: 2, label: 'Pegas', foodTypeShortLabel: 'mt', foodTypeId: '20'},
   ];
 
+  // Service Buttons 
+  public items: any[] = ['Restaurants', 'Shops', 'Courier'];
+  public toggle!: boolean;
+  public selectedIndex: any;
+
   constructor() {}
 
   public selectType(arg: any): void {
