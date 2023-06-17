@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="img-container">
+    <img alt="logo" src="assets/logo.svg">
+  </div>
+  <mat-form-field>
+    <input matInput placeholder="Enter your username"
+    color="accent">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Enter your password"
+    color="slategray"
+    [type]="hide ? 'password' : 'text'">
+    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+  </mat-form-field>
+  <button mat-button>Login</button>
+</div>

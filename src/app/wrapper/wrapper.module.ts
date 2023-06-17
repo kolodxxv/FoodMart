@@ -6,6 +6,7 @@ import { WrapperComponent } from './wrapper.component';
 import { SliderModule } from '../slider/slider.module';
 import { OutletModule } from '../outlet/outlet.module';
 import { BackgroundDirective } from './background.directive';
+import { NavbarModule } from '../navbar/navbar.module';
 
 
 
@@ -19,7 +20,8 @@ import { BackgroundDirective } from './background.directive';
     CommonModule,
     WrapperRoutingModule,
     SliderModule,
-    OutletModule
+    OutletModule,
+    NavbarModule
   ],
   exports: [WrapperComponent],
   bootstrap: [],

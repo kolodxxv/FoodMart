@@ -1,0 +1,36 @@
+:host {
+  background-color: black;
+}
+
+.img-container {
+  position: relative;
+  height: 130px;
+}
+
+img {
+  position: relative;
+  height: 333px;
+  top: -111px;
+  left: -13px;
+ 
+}
+
+.container {
+  position: relative;
+  box-shadow: 0 0 40px 4px #111118;
+  max-height: 100vh;
+  border-radius: 5px;
+  width: 365px;
+  min-width: 365px;
+  margin: 0 auto;
+  padding: 20px;
+  z-index: 1;
+  top: 30%;
+  background-color: whitesmoke;
+
+}
+
+
+.container > * {
+  width: 100%;
+}
