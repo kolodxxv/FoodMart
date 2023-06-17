@@ -4,8 +4,7 @@ import { WrapperRoutingModule } from './wrapper-routing.module';
 import { WrapperComponent } from './wrapper.component';
 
 import { SliderModule } from '../slider/slider.module';
-import { RestaurantsModule } from '../restaurants/restaurants.module';
-import { ShopsModule } from '../shops/shops.module';
+import { OutletModule } from '../outlet/outlet.module';
 import { BackgroundDirective } from './background.directive';
 
 
@@ -20,8 +19,7 @@ import { BackgroundDirective } from './background.directive';
     CommonModule,
     WrapperRoutingModule,
     SliderModule,
-    RestaurantsModule,
-    ShopsModule
+    OutletModule
   ],
   exports: [WrapperComponent],
   bootstrap: [],
