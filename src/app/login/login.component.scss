@@ -21,6 +21,7 @@ img {
   max-height: 100vh;
   border-radius: 5px;
   width: 365px;
+  height: 300px;
   min-width: 365px;
   margin: 0 auto;
   padding: 20px;
@@ -33,4 +34,29 @@ img {
 
 .container > * {
   width: 100%;
+}
+
+mat-form-field {
+  height: 65px;
+  width: 300px;
+}
+
+input {
+  width: 95%;
+  // padding: 4px 15px;
+  // margin: 8px 0;
+  // margin-left: 30px;
+  box-sizing: border-box;
+  background: transparent;
+  border: none;
+  // border-bottom: solid 0.5px gray;
+}
+
+button {
+  float: right;
+  width: 150px;
+}
+
+.active {
+  background: whitesmoke;
 }

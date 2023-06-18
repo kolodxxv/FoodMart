@@ -1,4 +1,8 @@
 import { Component, AfterViewInit, ElementRef, OnDestroy } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { LoginService } from './shared/login.service';
+
 
 @Component({
   selector: 'app-login',
@@ -7,9 +11,20 @@ import { Component, AfterViewInit, ElementRef, OnDestroy } from '@angular/core';
 })
 export class LoginComponent implements AfterViewInit {
   hide = true;
-  constructor(private elementRef: ElementRef) {
 
-  }
+  public loginForm: FormGroup = this.formBuilder.group({
+    username: '',
+    password: ''
+  })
+
+  constructor(
+    private elementRef: ElementRef,
+    private formBuilder: FormBuilder,
+    private router: Router, 
+    private loginSrvc: LoginService
+    
+    ) {}
+
   ngAfterViewInit(): void {
     this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = 'silver';
   }
@@ -17,4 +32,15 @@ export class LoginComponent implements AfterViewInit {
   ngOnDestroy(){
     this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = 'white';
   }
+
+  public onSubmit(): void {
+    const { username, password } = this.loginForm.controls;
+
+    if (this.loginSrvc.checkUserCredentials(username.value, password.value)) {
+      this.loginSrvc.storeUserName(username.value)
+      this.router.navigate([''])
+      this.loginForm.reset()
+    }
+  }
+
 }
