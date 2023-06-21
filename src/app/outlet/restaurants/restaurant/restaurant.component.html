@@ -1,0 +1,22 @@
+<header>
+  <router-outlet name="navbar" id="navbar"></router-outlet>
+</header>
+<div class="container">
+  
+    <div *ngFor="let food of menu" class="item">
+      <!-- <a routerLink="/product/{{food.id}}"></a> -->
+        <img [src]="food.context.imageUrl" [alt]="food.context.name"/>
+        <div class="conent">
+          <div class="name">
+            {{food.context.name}}
+          </div>
+          <div class="info">
+            {{food.context.info}}
+          </div>
+          <button type="button" class="price">
+            {{food.context.price}}
+          </button>
+        </div>
+      </div>
+  
+</div>

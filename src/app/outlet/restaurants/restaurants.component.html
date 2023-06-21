@@ -1,7 +1,9 @@
 <h1>Restaurants</h1>
   <div class="container">
     <li class="item" *ngFor="let restaurant of restaurantsArray">
-      <img alt="provider-img" src="{{restaurant.img}}">
-      <div>{{restaurant.label}}</div>
+      <img alt="provider-img" [src]="restaurant.img">
+      <a [routerLink]="['/restaurant', restaurant.outlet]">
+        <div>{{restaurant.label}}</div>
+      </a>
     </li>
   </div>
