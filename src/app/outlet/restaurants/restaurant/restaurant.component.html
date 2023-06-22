@@ -1,11 +1,10 @@
-<header>
-  <router-outlet name="navbar" id="navbar"></router-outlet>
-</header>
+<router-outlet name="navbar"></router-outlet>
+
 <div class="container">
-  
-    <div *ngFor="let food of menu" class="item">
-      <!-- <a routerLink="/product/{{food.id}}"></a> -->
-        <img [src]="food.context.imageUrl" [alt]="food.context.name"/>
+  <ng-container *ngIf="menu.length else emptyMenuContainer">
+    <ng-container *ngFor="let food of menu">
+      <div class="item">
+        <img id="food-image" [src]="food.context.imageUrl" [alt]="food.context.name"/>
         <div class="conent">
           <div class="name">
             {{food.context.name}}
@@ -18,5 +17,13 @@
           </button>
         </div>
       </div>
-  
+    </ng-container>
+  </ng-container>
+  <ng-template #emptyMenuContainer>
+    <p>No data available</p>
+  </ng-template>
 </div>
+       
+        
+  
+

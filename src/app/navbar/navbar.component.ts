@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
+import { Component } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 
 @Component({
@@ -13,7 +12,9 @@ export class NavbarComponent {
 
   public responsive!: boolean;
 
-  constructor(private observer: BreakpointObserver) {}
+  constructor(
+    private observer: BreakpointObserver
+    ) {}
 
   
 

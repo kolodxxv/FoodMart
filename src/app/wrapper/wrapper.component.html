@@ -14,9 +14,9 @@
 </app-slider-component>
 <!-- Content Component -->
 <div *ngIf="selectedIndex === 0">
-  <router-outlet name="restaurants"></router-outlet>
+  <app-restaurants-component></app-restaurants-component>
 </div>
 <div *ngIf="selectedIndex === 1">
-  <router-outlet name="shops"></router-outlet>
+  <app-shops-component></app-shops-component>
 </div>
 
