@@ -7,10 +7,11 @@
         <div class="slider-wrap">
           <div class="slider-main">
             <div class="item" *ngFor="let item of foodArr" appHover>
-              <div class="image-container">
+              <div class="image-container" appHover>
                 <img class="type-image" alt="img" src="{{ item.img }}">
+                <p class="text" (click)="selectType.emit(item)">{{ item.textValue }}</p>
               </div>
-              <p class="text" (click)="selectType.emit(item)">{{ item.textValue }}</p>
+              
             </div>
           </div>
           <div class="button-area">

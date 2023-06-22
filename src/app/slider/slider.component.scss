@@ -15,23 +15,26 @@
 
 .item {
   display: inline-block;
-  width: 200px;
-  height: 300px;
+  cursor: pointer;
+  min-width: 90px;
+  width: 80px;
+  height: 80px;
   background: transparent;
   position: relative;
   margin: 0 12px;
+  border-radius: 200%;
 }
 
 .text {
-  font-weight: 600;
+  font-weight: 550;
   overflow: hidden;
-  // top: 20%;
-  // left: 30%;
-  color: black;
-  font-size: 16px;
+  font-size: 14px;
   height: 24px;
   text-align: center;
   padding-inline: 3px;
+  margin: 0;
+  top: 55px;
+  position: absolute;
 }
 
 .prev {
@@ -48,8 +51,22 @@
   transform: translate(-50%, -50%);
 }
 
+// .image-container {
+//   height: 70%;
+//   width: 70%;
+// }
+
+img {
+  height: 70%;
+  width: 70%;
+  max-width: 100%;
+  display: block;
+}
+
 .image-container {
-  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
 }
 

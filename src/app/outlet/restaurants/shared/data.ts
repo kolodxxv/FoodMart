@@ -1,7 +1,7 @@
 import { Menu } from "./models/menu-model";
 
 export const sample_menu: Menu[] = [
-  {outlet: "McDonald's",
+  {outlet: "McDonalds",
   context: 
   {
     id: '1',
@@ -55,5 +55,16 @@ export const sample_menu: Menu[] = [
     gr: '119 gr',
     tags: ['McDonalds', 'Burger'],
     imageUrl: 'https://straus.s3.amazonaws.com/media/CACHE/images/products2/9bcebc50681e4d3d9216cc38707a236d/ba660596c07f1edae57369663ddc2a6b.png'
+  }},
+  {outlet: 'StarKebab',
+  context: 
+  {
+    id: '6',
+    name: 'Kebastos',
+    price: '69 MDL',
+    info: 'Kebab with chicken meat and vegetables',
+    gr: '410 gr',
+    tags: ['Kebab', 'Kebastos'],
+    imageUrl: 'https://starkebab.md/paperclip/App/Product/000/000/003/image/medium/Star%20Kebab_pui.jpg'
   }}
 ] 

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Outlets } from './shared/models/restaurants-model';
 import { OutletsService } from './shared/services/outlets.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-restaurants-component',
@@ -12,9 +13,14 @@ export class RestaurantsComponent {
   public restaurantsArray: Outlets[] = []
 
   constructor(
-    outletsSvrc: OutletsService
+    outletsSrvc: OutletsService,
+    private router: Router
   ) {
-    this.restaurantsArray = outletsSvrc.getAll();
+    this.restaurantsArray = outletsSrvc.getAll();
+  }
+
+  public redirectByEventType(url: string, outlet: any): void {
+    this.router.navigate([`/${url}`, outlet])
   }
 
 }
