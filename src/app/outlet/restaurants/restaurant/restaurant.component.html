@@ -1,29 +1,32 @@
-<router-outlet name="navbar"></router-outlet>
-
-<div class="container">
-  <ng-container *ngIf="menu.length else emptyMenuContainer">
-    <ng-container *ngFor="let food of menu">
-      <div class="item">
-        <img id="food-image" [src]="food.context.imageUrl" [alt]="food.context.name"/>
-        <div class="conent">
-          <div class="name">
-            {{food.context.name}}
+<app-navbar-component></app-navbar-component>
+<div class="wrapper">
+  <div class="banner-container">
+    <div class="banner"></div>
+  </div>
+  <div class="container">
+    <ng-container *ngIf="menu.length else emptyMenuContainer">
+      <ng-container *ngFor="let food of menu">
+        <div class="item">
+          <img id="food-image" [src]="food.context.imageUrl" [alt]="food.context.name"/>
+          <div class="conent">
+            <div class="name">
+              {{food.context.name}}
+            </div>
+            <div class="info">
+              {{food.context.info}}
+            </div>
+            <button type="button" class="price">
+              {{food.context.price}}
+            </button>
           </div>
-          <div class="info">
-            {{food.context.info}}
-          </div>
-          <button type="button" class="price">
-            {{food.context.price}}
-          </button>
         </div>
-      </div>
+      </ng-container>
     </ng-container>
-  </ng-container>
-  <ng-template #emptyMenuContainer>
-    <p>No data available</p>
-  </ng-template>
-</div>
-       
+    <ng-template #emptyMenuContainer>
+      <p>No data available</p>
+    </ng-template>
+  </div>
+</div>     
         
   
 

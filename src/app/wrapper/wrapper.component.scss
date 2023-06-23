@@ -61,4 +61,27 @@ span {
   word-break: break-word;
 }
 
+.banner {
+  display: flex;
+  // width: 90%;
+  // border-radius: 16px;
+  // height: 270px;
+  // position: relative;
+  // top: 10%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  border-radius: 1rem;
+  height: 225px;
+  margin-bottom: 10px;
+  background-image: url("https://straus.s3.amazonaws.com:443/media/CACHE/images/providers/722fc19537284f2ea458e5f608393e63/c74145cce0eb6aed4783df7b04ad3481.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  margin-top: 31px;
+  
+}
+
+
 // 
