@@ -1,18 +1,20 @@
 // Restaurants, Shops and Courier buttons
 
-.service-buttons {
+.container-buttons {
   display: flex;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: justify;
   justify-content: space-between;
-  width: 89%;
-  gap: 20px;
-  padding: 10px;
-  position: relative;
-  background: #FFFFFF;
+  background-color: white;
+  flex-direction: row;
+  // gap: 10px;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
+  width: 95%;
+  height: 150px;
+  position: static;
+  overflow: hidden;
+  gap: 10px;
+  padding: 30px;
   
 }
 
@@ -24,7 +26,10 @@
   flex-grow: 0;
   flex-direction: column;
   padding: 15px 12px;
-  width: 32%;
+  width: 28%;
+  height: 80px;
+  
+ 
   border-radius: 16px;
   min-height: 100px;
   position: relative;
@@ -41,16 +46,21 @@
   justify-content: space-between;
   flex-shrink: 0;
   flex-grow: 0;
-  flex-direction: column;
-  padding: 15px 12px;
-  width: 32%;
-  border-radius: 16px;
-  min-height: 100px;
+  // flex: 30%;
+  // flex-direction: column;
+  // padding: 15px 12px;
+  // width: 32%;
+  // border-radius: 16px;
+  // min-height: 100px;
   position: relative;
   color: rgb(225, 225, 225);
   opacity: 1;
   cursor: pointer;
   background: rgb(212, 42, 183);
+  
+  span {
+    color: white;
+  }
 }
 
 span {
@@ -61,19 +71,19 @@ span {
   word-break: break-word;
 }
 
+.main {
+  background-color: whitesmoke;
+}
+
+
 .banner {
   display: flex;
-  // width: 90%;
-  // border-radius: 16px;
-  // height: 270px;
-  // position: relative;
-  // top: 10%;
-  // left: 50%;
-  // transform: translate(-50%, -50%);
+  float: left;
   border-radius: 1rem;
-  height: 225px;
+  height: 100%;
+  left: 17px;
+  width: 95%;
   margin-bottom: 10px;
-  background-image: url("https://straus.s3.amazonaws.com:443/media/CACHE/images/providers/722fc19537284f2ea458e5f608393e63/c74145cce0eb6aed4783df7b04ad3481.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -84,4 +94,3 @@ span {
 }
 
 
-// 

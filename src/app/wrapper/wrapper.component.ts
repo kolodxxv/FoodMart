@@ -28,7 +28,7 @@ export class WrapperComponent {
   // Service Buttons 
   public items: any[] = ['Restaurants', 'Shops', 'Courier'];
   public toggle!: boolean;
-  public selectedIndex: any;
+  public selectedIndex: any = 0;
 
   constructor() {}
 

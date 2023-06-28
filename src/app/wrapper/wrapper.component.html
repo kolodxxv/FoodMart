@@ -1,27 +1,32 @@
 <!-- Navigation -->
 <app-navbar-component></app-navbar-component>
 
-<!-- Banner -->
-<div class="banner">
-  
-</div>
+<div class="main">
 
-<!-- Main Page buttons -->
-<div class="service-buttons" >
-  <a *ngFor="let item of items; let i = index"
-    [ngClass]="{'active-service': selectedIndex === i, 'service': !toggle}"
-    (click)="selectedIndex=i">
-    <span>{{item}}</span></a>
-</div>
-<!-- Slider Component -->
-<app-slider-component name="slider" [foodArr]="foodArr" 
-                      (selectType)="selectType($event)">
-</app-slider-component>
-<!-- Content Component -->
-<div *ngIf="selectedIndex === 0">
-  <app-restaurants-component></app-restaurants-component>
-</div>
-<div *ngIf="selectedIndex === 1">
-  <app-shops-component></app-shops-component>
-</div>
+  <!-- Banner -->
+  <div class="banner-container">
+    <img src="assets/img/banner1.png" class="banner">
+  </div>
 
+<!-- Container -->
+
+
+    <!-- Main Page buttons -->
+  <div class="container-buttons">
+    <a *ngFor="let item of items; let i = index"
+      [ngClass]="{'active-service': selectedIndex === i, 'service': !toggle}"
+      (click)="selectedIndex=i">
+      <span>{{item}}</span></a>
+  </div>
+  <!-- Slider Component -->
+  <app-slider-component name="slider" [foodArr]="foodArr" 
+                        (selectType)="selectType($event)">
+  </app-slider-component>
+  <!-- Content Component -->
+  <div *ngIf="selectedIndex === 0">
+    <app-restaurants-component></app-restaurants-component>
+  </div>
+  <div *ngIf="selectedIndex === 1">
+    <app-shops-component></app-shops-component>
+  </div>
+</div>
