@@ -11,7 +11,7 @@ export class SliderComponent {
   constructor() {}
 
   ngAfterViewInit(): void {
-    console.log(this.foodArr);
+   
   }
 
 }

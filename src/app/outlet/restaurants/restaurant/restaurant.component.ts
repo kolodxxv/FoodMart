@@ -2,12 +2,9 @@ import { Component, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/
 import { Menu } from '../shared/models/menu-model';
 import { MenuService } from '../shared/services/menu.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { take, map, of, tap } from 'rxjs';
+import { take, map, tap } from 'rxjs';
 import { OutletsService } from '../shared/services/outlets.service';
 import { Outlets } from '../shared/models/restaurants-model';
-
-
-
 
 
 @Component({
