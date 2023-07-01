@@ -15,7 +15,7 @@ const routes: Routes = [
     { path: '', component: NavbarComponent}
   ]}, 
   { path: 'restaurant/:id', component: RestaurantComponent, children: [
-    { path: '', component: NavbarComponent, outlet: 'navbar' }
+    { path: 'restaurant/:id', component: NavbarComponent }
   ]}
 ]
  

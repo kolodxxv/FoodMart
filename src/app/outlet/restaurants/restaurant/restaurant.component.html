@@ -1,29 +1,53 @@
-<router-outlet name="navbar"></router-outlet>
-
-<div class="container">
-  <ng-container *ngIf="menu.length else emptyMenuContainer">
-    <ng-container *ngFor="let food of menu">
-      <div class="item">
-        <img id="food-image" [src]="food.context.imageUrl" [alt]="food.context.name"/>
-        <div class="conent">
-          <div class="name">
-            {{food.context.name}}
+<app-navbar-component></app-navbar-component>
+<div class="wrapper">
+  <div class="banner-container">
+    <div class="banner" [ngStyle]="{'background-image': 'url(' + currentOutlet['img'] +')'}">
+      <div class="descr-container">
+        <div class="outlet-container">
+          <div class="outlet">
+            <div class="logo-container">
+              <img class="logo" alt="logo" [src]="currentOutlet['logo'] ">
+            </div>
+            <div class="info-container">
+              <div class="name">
+                <h1>{{ currentOutlet['name'] }}</h1>
+              </div>
+              <div class="hours">
+                <h4>{{ currentOutlet['hours'] }}</h4>
+              </div>
+              <div class="payment"></div>
+            </div>
           </div>
-          <div class="info">
-            {{food.context.info}}
-          </div>
-          <button type="button" class="price">
-            {{food.context.price}}
-          </button>
-        </div>
       </div>
+      <div class="info">
+        
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <ng-container *ngIf="menu.length else emptyMenuContainer">
+      <ng-container *ngFor="let food of menu">
+        <div class="item">
+          <img id="food-image" [src]="food.context.imageUrl" [alt]="food.context.name"/>
+          <div class="conent">
+            <div class="name">
+              {{food.context.name}}
+            </div>
+            <div class="info">
+              {{food.context.info}}
+            </div>
+            <button type="button" class="price">
+              {{food.context.price}}
+            </button>
+          </div>
+        </div>
+      </ng-container>
     </ng-container>
-  </ng-container>
-  <ng-template #emptyMenuContainer>
-    <p>No data available</p>
-  </ng-template>
-</div>
-       
+    <ng-template #emptyMenuContainer>
+      <p>No data available</p>
+    </ng-template>
+  </div>
+</div>     
         
   
 

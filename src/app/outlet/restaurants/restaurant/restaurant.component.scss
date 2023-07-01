@@ -1,7 +1,14 @@
+
+
+.wrapper {
+  background: whitesmoke;
+}
+
 .container {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 10px;
   
 }
 
@@ -13,7 +20,8 @@
   border-radius: 16px;
   padding: 12px;
   position: relative;
-  background: whitesmoke;
+  background: white;
+
 }
 
 #food-image {
@@ -70,5 +78,96 @@ button {
   padding-inline: 32px;
   background: rgb(235, 236, 241);
   color: rgb(2, 2, 2);
+}
 
+.banner-container {
+  position: relative;
+  padding-top: 3px;
+  margin-bottom: 60px;
+}
+
+.banner {
+  display: flex;
+  // width: 90%;
+  // border-radius: 16px;
+  // height: 270px;
+  // position: relative;
+  // top: 10%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  border-radius: 1rem;
+  height: 225px;
+  left: 17px;
+  width: 95%;
+  margin-bottom: 10px;
+  background-image: url("https://straus.s3.amazonaws.com:443/media/CACHE/images/providers/722fc19537284f2ea458e5f608393e63/c74145cce0eb6aed4783df7b04ad3481.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  margin-top: 31px;
+  
+}
+
+// Banner, Restaurant Info 
+
+.descr-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  inset: 0px;
+  padding: 15px;
+  background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.75) 100%);
+
+}
+
+.outlet {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1 1 0%;
+  padding-bottom: 5px;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.logo {
+  border-radius: 16px;
+  width: 70px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-style: none;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0px;
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  margin-top: 0px;
+  line-height: 1.33;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 700;
+}
+
+.hours {
+  display: flex;
+  align-items: center;
+  margin-top: 0px;
+  font-family: 'Times New Roman', Times, serif;
+  line-height: 1.5;
 }

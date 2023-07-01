@@ -7,18 +7,16 @@
     <form class="search-form">
       <input type="search" id="search-input" placeholder="Search">
     </form>
-    <!-- TODO HOME ROUTING -->
-    <a routerLink="/"> 
-      <mat-icon id="logo-icon">fastfood</mat-icon>
-    </a> 
+    <mat-icon (click)="redirectByEventType('/')" id="logo-icon">fastfood</mat-icon>
   </mat-toolbar-row>
   <!-- Regular view -->
   <mat-toolbar-row class="regular" *ngIf="responsive === false">
-    <img alt="logo" id="logo-image" src="assets/img/untitled.svg" >
+    <img alt="logo" id="logo-image" src="assets/img/untitled.svg" 
+    (click)="redirectByEventType('/')">
     <form class="search-form-reg">
       <input type="search" id="search-input-reg" placeholder="Search">
     </form>
-    <button mat-button id="signin-button">
+    <button mat-button id="signin-button" (click)="redirectByEventType('login')">
       <span>Log In</span>
       <mat-icon>account_circle</mat-icon>      
     </button>
@@ -38,7 +36,7 @@
         <h1 id="greet-nav">Hey there!</h1>
         <mat-list-item> 
           <mat-icon matListItemIcon>home</mat-icon>
-          <span matLine>Home</span>
+          <span matLine (click)="redirectByEventType('/')">Home</span>
         </mat-list-item>
         <mat-list-item>
           <mat-icon matListItemIcon>account_circle</mat-icon>
@@ -54,17 +52,17 @@
         </mat-list-item>
         <mat-list-item>
           <mat-icon matListItemIcon>login</mat-icon>
-          <span matLine [routerLink]="['/login']">Login</span>
+          <span matLine (click)="redirectByEventType('login')">Login</span>
         </mat-list-item>
       </mat-nav-list>
     </mat-sidenav>
-    <mat-sidenav-content>
+    <!-- <mat-sidenav-content>
       <div style="height: 40vh;">
         <div class="benner-container">
-          <img class="banner" src="assets/summer-banner.png">
+          <img class="banner" [src]="[componentsBanner]">
         </div>
       </div>
-    </mat-sidenav-content>
+    </mat-sidenav-content> -->
   </mat-sidenav-container>
 
 

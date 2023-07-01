@@ -40,6 +40,7 @@ mat-toolbar .responsive {
     position: absolute;
     width: 300px;
     height: 150px;
+    cursor: pointer;
 }
 
 mat-sidenav {
@@ -56,7 +57,8 @@ mat-sidenav {
     transform: scale(2);
     color: rgb(237, 42, 179);
     left: 20px;
-    top: 25px
+    top: 25px;
+    cursor: pointer;
 }
 
 #close-menu-button {

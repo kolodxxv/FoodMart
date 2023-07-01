@@ -4,9 +4,9 @@ import { SliderComponent } from './slider.component';
 import { RouterModule } from '@angular/router';
 
 
-import { NextDirective } from './next.directive';
-import { PrevDirective } from './prev.directive';
-import { HoverDirective } from './hover.directive';
+import { NextDirective } from './shared/directives/next.directive';
+import { PrevDirective } from './shared/directives/prev.directive';
+import { HoverDirective } from './shared/directives/hover.directive';
 
 @NgModule({
   imports: [BrowserModule, RouterModule],

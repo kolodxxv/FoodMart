@@ -1,8 +1,12 @@
-<h1>Restaurants</h1>
-  <div class="container">
-    <li class="item" *ngFor="let restaurant of restaurantsArray">
-      <img class="image" alt="provider-img" [src]="restaurant.img" 
-      (click)="redirectByEventType('restaurant', restaurant.outlet)">
-        <div class="outlet-selector-label">{{restaurant.label}}</div>
-    </li>
-  </div>
+<div class="body">
+  <h1>Restaurants</h1>
+    <div class="container">
+      <li class="item" *ngFor="let restaurant of restaurantsArray">
+        <img class="image" alt="provider-img" [src]="restaurant.img" 
+        (click)="redirectByEventType('restaurant', restaurant.outlet)">
+          <div class="outlet-selector-label">{{restaurant.label}}
+            <img class="logo" src="{{restaurant.logo}}">
+          </div>
+      </li>
+    </div>
+</div>

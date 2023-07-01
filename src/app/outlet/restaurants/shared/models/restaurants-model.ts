@@ -5,4 +5,6 @@ export class Outlets {
   foodTypeShortLabel!: string;
   foodTypeId!: string;
   img!: string;
+  logo!: string;
+  hours!: string; 
 }

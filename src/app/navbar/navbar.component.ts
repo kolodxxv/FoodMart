@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar-component',
@@ -8,14 +9,16 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 })
 export class NavbarComponent {
 
-  
-
   public responsive!: boolean;
 
   constructor(
-    private observer: BreakpointObserver
+    private observer: BreakpointObserver,
+    public router: Router
     ) {}
 
+    public redirectByEventType(url: string): void {
+      this.router.navigate([`/${url}`])
+    }
   
 
   ngAfterViewInit() {
