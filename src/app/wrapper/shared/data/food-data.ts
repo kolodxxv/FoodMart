@@ -1,6 +1,6 @@
-import { foodType } from "../models/food-model";
+import { foodTypeModel } from "../models/food-model";
 
-export const types_list: foodType[] = [
+export const type_list: foodTypeModel[] = [
   { id: 1, 
     textValue: 'Kebab', 
     foodTypeShortLabel: 'kb', 
@@ -26,4 +26,16 @@ export const types_list: foodType[] = [
     foodTypeShortLabel: 'fs', 
     foodTypeId: '50',
     img: 'https://straus.s3.amazonaws.com:443/media/CACHE/images/category/fish/384a62033e755bd0b5d6547a214c0658.png' },
+  { id: 6,
+    textValue: 'WOK',
+    foodTypeShortLabel: 'wk',
+    foodTypeId: '60',
+    img: 'https://straus.s3.amazonaws.com/media/CACHE/images/category/favpng_2/3836f8f0a2cee2fa6adc35fc4cde68aa.png' }, 
+  {
+    id: 7,
+    textValue: 'Breakfast',
+    foodTypeShortLabel: 'brf',
+    foodTypeId: '70',
+    img: 'https://straus.s3.amazonaws.com/media/CACHE/images/category/pngegg_82_1/3c640434989577cf6c78dbd0342f9e25.png'},
+    
 ]

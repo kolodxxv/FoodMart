@@ -1,17 +1,9 @@
 <!-- Navigation -->
 <app-navbar-component></app-navbar-component>
-
 <div class="main">
-
-  <!-- Banner -->
   <div class="banner-container">
-    <img src="assets/img/banner1.png" class="banner">
+    <img alt="banner" src="assets/img/banner1.png" class="banner">
   </div>
-
-<!-- Container -->
-
-
-    <!-- Main Page buttons -->
   <div class="container-buttons">
     <a *ngFor="let item of items; let i = index"
       [ngClass]="{'active-service': selectedIndex === i, 'service': !toggle}"
@@ -19,7 +11,12 @@
       <span>{{item}}</span></a>
   </div>
   <!-- Slider Component -->
-  <app-slider-component name="slider" [foodArr]="foodArr" 
+  <app-slider-component name="slider" 
+  *ngIf="selectedIndex === 0" [foodArr]='foodArr' 
+                        (selectType)="selectType($event)">
+  </app-slider-component>
+  <app-slider-component name="slider" 
+  *ngIf="selectedIndex === 1" [foodArr]='grocery' 
                         (selectType)="selectType($event)">
   </app-slider-component>
   <!-- Content Component -->

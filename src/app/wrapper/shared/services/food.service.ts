@@ -1,15 +1,20 @@
 import { Injectable } from '@angular/core';
-import { foodType } from '../models/food-model';
-import { types_list } from '../data/food-data';
+import { foodTypeModel } from '../models/food-model';
+import { type_list } from '../data/food-data';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class FoodService {
 
-  constructor() { }
+  constructor(
+    
+  ) { }
 
-  getAll(): foodType[]{
-    return types_list;
+  getAll(): foodTypeModel[]{
+    return type_list;
   }
-}
+
+
+  }

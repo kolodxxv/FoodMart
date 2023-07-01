@@ -1,4 +1,4 @@
-export class foodType {
+export class foodTypeModel {
   id!: number;
   textValue!: string;
   foodTypeShortLabel!: string;
