@@ -34,7 +34,7 @@ export const type_list: foodTypeModel[] = [
   {
     id: 7,
     textValue: 'Breakfast',
-    foodTypeShortLabel: 'brf',
+    foodTypeShortLabel: 'bf',
     foodTypeId: '70',
     img: 'https://straus.s3.amazonaws.com/media/CACHE/images/category/pngegg_82_1/3c640434989577cf6c78dbd0342f9e25.png'},
     

@@ -1,0 +1,13 @@
+<header>
+  <app-navbar-component></app-navbar-component>
+</header>
+
+<div class="container">
+      <li class="item" *ngFor="let restaurant of outlets">
+        <img class="image" alt="provider-img" [src]="restaurant.img">
+          <div class="outlet-selector-label">{{restaurant.label}}
+            <img class="logo" src="{{restaurant.logo}}">
+          </div>
+      </li>
+  
+</div>

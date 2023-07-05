@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { RestaurantComponent } from './restaurants/restaurant/restaurant.component';
 import { ShopComponent } from './shops/shop/shop.component';
 import { NavbarModule } from '../navbar/navbar.module';
+import { TypeFilterComponent } from './type-filter/type-filter.component';
 
 
 
@@ -26,6 +27,7 @@ import { NavbarModule } from '../navbar/navbar.module';
     ShopsComponent,
     RestaurantComponent,
     ShopComponent,
+    TypeFilterComponent,
   ],
   
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

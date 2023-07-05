@@ -15,8 +15,8 @@ import { Outlets } from '../shared/models/restaurants-model';
 })
 export class RestaurantComponent {
 
-  menu: Menu[] = [];
-  outlets: Outlets[] = [];
+  public menu: Menu[] = [];
+  public outlets: Outlets[] = [];
 
   public currentOutlet: {[key : string]: any[]} = {};
   
@@ -26,7 +26,7 @@ export class RestaurantComponent {
     public router: Router,
     private readonly route: ActivatedRoute,
     private cdr: ChangeDetectorRef,
-    outletSrvc: OutletsService
+    public outletSrvc: OutletsService
     ) { 
       this.menu = menuSrvc.getAll();
       this.outlets = outletSrvc.getAll();
