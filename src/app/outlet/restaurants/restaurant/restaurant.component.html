@@ -26,8 +26,8 @@
   </div>
   <div class="container">
     <ng-container *ngIf="menu.length else emptyMenuContainer">
-      <ng-container *ngFor="let food of menu">
-        <div class="item">
+      <ng-container *ngFor="let food of menu; let i = index">
+        <div class="item" (click)="currentProduct = food; openDialog()">
           <img id="food-image" [src]="food.context.imageUrl" [alt]="food.context.name"/>
           <div class="conent">
             <div class="name">

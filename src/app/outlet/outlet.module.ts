@@ -7,6 +7,8 @@ import { RestaurantComponent } from './restaurants/restaurant/restaurant.compone
 import { ShopComponent } from './shops/shop/shop.component';
 import { NavbarModule } from '../navbar/navbar.module';
 import { TypeFilterComponent } from './type-filter/type-filter.component';
+import { ProductDialogComponent } from './restaurants/restaurant/product-dialog/product-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog'
 
 
 
@@ -15,7 +17,8 @@ import { TypeFilterComponent } from './type-filter/type-filter.component';
   imports: [
     CommonModule,
     RouterModule,
-    NavbarModule
+    NavbarModule,
+    MatDialogModule
   ],
   exports: [
     RestaurantsComponent, 
@@ -28,6 +31,7 @@ import { TypeFilterComponent } from './type-filter/type-filter.component';
     RestaurantComponent,
     ShopComponent,
     TypeFilterComponent,
+    ProductDialogComponent,
   ],
   
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

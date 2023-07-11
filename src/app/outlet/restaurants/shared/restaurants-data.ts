@@ -43,7 +43,7 @@ export const sample_outlets: Outlets[] = [
     outlet: 'granier',
     label: 'Granier',
     foodTypeShortLabel: 'pt',
-    foodTypeId: '20',
+    foodTypeId: '70',
     img: 'https://straus.s3.amazonaws.com/media/CACHE/images/providers/13e5303ef89f4e90abb7ed9a7c3881b3/bdab92cb12c1300492768e414f3f7c81.jpg',
     logo: 'https://straus.s3.amazonaws.com/media/CACHE/images/providers/6e5655855c47426d95ac6b1c63234bd8/8e94ffa3855470538082239af999b97a.png',
     hours: 'Closes 22:00'

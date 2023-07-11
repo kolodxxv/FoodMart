@@ -19,12 +19,6 @@ export class WrapperComponent {
   public foodArr: foodTypeModel[] = [] 
   public grocery: groceryTypeModel[] = []
   public outlets: Outlets[]
-  
-
-  // public locations: any[] = [
-  //   { id: 1, label: 'Star kebab', foodTypeShortLabel: 'kb', foodTypeId: '10' },
-  //   { id: 2, label: 'Pegas', foodTypeShortLabel: 'mt', foodTypeId: '20'},
-  // ];
 
   // Service Buttons 
   public items: any[] = ['Restaurants', 'Shops', 'Courier'];
