@@ -7,6 +7,9 @@ import { SliderModule } from '../slider/slider.module';
 import { OutletModule } from '../outlet/outlet.module';
 import { BackgroundDirective } from './background.directive';
 import { NavbarModule } from '../navbar/navbar.module';
+import { CartModule } from '../cart/cart.module';
+import { FooterModule } from '../footer/footer.module';
+
 
 
 
@@ -22,7 +25,9 @@ import { NavbarModule } from '../navbar/navbar.module';
     WrapperRoutingModule,
     SliderModule,
     OutletModule,
-    NavbarModule
+    NavbarModule,
+    CartModule,
+    FooterModule
   ],
   exports: [WrapperComponent],
   bootstrap: [],

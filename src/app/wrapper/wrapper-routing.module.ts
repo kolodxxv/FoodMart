@@ -7,13 +7,17 @@ import { ShopsComponent } from '../outlet/shops/shops.component';
 import { RestaurantComponent } from '../outlet/restaurants/restaurant/restaurant.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { TypeFilterComponent } from '../outlet/type-filter/type-filter.component';
+import { CartComponent } from '../cart/cart.component';
+import { FooterComponent } from '../footer/footer.component';
 
 
 const routes: Routes = [
   { path: '', component: WrapperComponent, children: [
     { path: '', component: RestaurantsComponent },
     { path: '', component: ShopsComponent },
-    { path: '', component: NavbarComponent}
+    { path: '', component: NavbarComponent},
+    { path: '', component: CartComponent},
+    { path: '', component: FooterComponent}
   ]}, 
   { path: 'restaurant/:id', component: RestaurantComponent, children: [
     { path: 'restaurant/:id', component: NavbarComponent }

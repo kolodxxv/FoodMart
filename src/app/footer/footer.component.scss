@@ -1,0 +1,86 @@
+.container {
+  display: flex;
+  align-items: center;
+  height: auto;
+  max-width: 1440px;
+  padding-inline-start: 15px;
+  margin-inline-end: auto;
+  box-shadow: 1px 1px 1px 1px;
+}
+
+.context {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: 30px;
+  padding-bottom: 90px;
+  width: 100%;
+  background: #FFFFFF;
+}
+
+.mobile-app {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+p {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.app-markets {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.spp-store .google-play {
+  width: 45%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.insta {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.insta-p {
+  font-weight: 700;
+}
+
+.insta-icon {
+  margin-left: 15px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.docs .contacts {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
