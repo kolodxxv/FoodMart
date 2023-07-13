@@ -3,10 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 
+
 import { AppComponent } from './app.component';
 import { NavbarModule } from './navbar/navbar.module';
 import { WrapperModule } from './wrapper/wrapper.module';
 import { LoginModule } from './login/login.module';
+import { StoreModule } from '@ngrx/store';
+import { cartReducer } from './cart/store/reducer';
+
 
 
 
@@ -18,7 +22,8 @@ import { LoginModule } from './login/login.module';
     NavbarModule,
     RouterModule,
     WrapperModule,
-    LoginModule
+    LoginModule,
+    StoreModule.forRoot({ cartEntries: cartReducer})
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],

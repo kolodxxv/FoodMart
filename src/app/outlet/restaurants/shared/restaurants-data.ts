@@ -43,10 +43,20 @@ export const sample_outlets: Outlets[] = [
     outlet: 'granier',
     label: 'Granier',
     foodTypeShortLabel: 'pt',
-    foodTypeId: '20',
+    foodTypeId: '70',
     img: 'https://straus.s3.amazonaws.com/media/CACHE/images/providers/13e5303ef89f4e90abb7ed9a7c3881b3/bdab92cb12c1300492768e414f3f7c81.jpg',
     logo: 'https://straus.s3.amazonaws.com/media/CACHE/images/providers/6e5655855c47426d95ac6b1c63234bd8/8e94ffa3855470538082239af999b97a.png',
     hours: 'Closes 22:00'
+  },
+  {
+    id: 6,
+    outlet: 'mrkebab',
+    label: 'Mr.Kebab',
+    foodTypeShortLabel: 'kb',
+    foodTypeId: '10',
+    img: 'https://straus.s3.amazonaws.com/media/CACHE/images/providers/5079a1dc5f0b4ea4acbe8ef932269694/5dc500e696e5ad234bc6ee96190682f4.jpg',
+    logo: 'https://straus.s3.amazonaws.com/media/CACHE/images/providers/1a62731ad1664225a9fd79bd43ad71ff/d8adaa352f0c52c1d5ec6c4d43f20872.png',
+    hours: 'Non-Stop'
   }
   
 ]

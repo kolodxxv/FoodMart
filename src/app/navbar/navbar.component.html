@@ -4,6 +4,10 @@
     <button mat-icon-button id="menu-button" (click)="sidenav.toggle()">
       <mat-icon id="menu-icon">menu</mat-icon>
     </button>
+    <div class="shopping-values">
+      <div class="counter">{{ countProducts$ | async }}</div>
+      <div class="total-price">{{ totalPrice$ | async | number: '1.2-2'}}</div>
+    </div>
     <form class="search-form">
       <input type="search" id="search-input" placeholder="Search">
     </form>

@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="context">
+    <div class="logo-container">
+      <img alt="product-logo" [src]='data.context.imageUrl'>
+    </div>
+    <div class="name">{{data.context.name}}</div>
+    <div class="description">{{data.context.info}}</div>
+    
+    <ul>
+      <li>Yes<input type="checkbox"></li>
+      <li>Yes<input type="checkbox"></li>
+      <li>Yes<input type="checkbox"></li>
+      <li>Yes<input type="checkbox"></li>
+      <li>Yes<input type="checkbox"></li>
+      <li>Yes<input type="checkbox"></li>
+      <li>Yes<input type="checkbox"></li>
+    </ul>
+  </div>
+  <footer>
+    <div class="another">
+      <button class="minus" (click)="Minus()">-</button>
+      <span>{{productAmount}}</span>
+      <button class="plus" (click)="plus()">+</button>
+    </div>
+    <div class="price">{{this.price}}</div>
+    <div class="button">
+      <button class="add-button" (click)="buyProduct(data)">Add to cart</button>
+    </div>
+  </footer>
+</div>

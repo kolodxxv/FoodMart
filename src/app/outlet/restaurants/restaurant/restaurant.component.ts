@@ -5,6 +5,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { take, map, tap } from 'rxjs';
 import { OutletsService } from '../shared/services/outlets.service';
 import { Outlets } from '../shared/models/restaurants-model';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { ProductDialogComponent } from './product-dialog/product-dialog.component';
+
 
 
 @Component({
@@ -15,18 +18,19 @@ import { Outlets } from '../shared/models/restaurants-model';
 })
 export class RestaurantComponent {
 
-  menu: Menu[] = [];
-  outlets: Outlets[] = [];
+  public menu: Menu[] = [];
+  public outlets: Outlets[] = [];
 
   public currentOutlet: {[key : string]: any[]} = {};
-  
+  public currentProduct: any;
 
   constructor(
     private menuSrvc: MenuService,
     public router: Router,
     private readonly route: ActivatedRoute,
     private cdr: ChangeDetectorRef,
-    outletSrvc: OutletsService
+    public outletSrvc: OutletsService,
+    private dialog: MatDialog
     ) { 
       this.menu = menuSrvc.getAll();
       this.outlets = outletSrvc.getAll();
@@ -62,5 +66,11 @@ export class RestaurantComponent {
 
   ngDoCheck() {
     this.cdr.markForCheck();
+  }
+
+  openDialog(){
+    const dialogCongif = new MatDialogConfig();
+    dialogCongif.data = this.currentProduct;
+    this.dialog.open(ProductDialogComponent, dialogCongif);
   }
 }

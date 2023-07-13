@@ -6,6 +6,7 @@ import { RestaurantsComponent } from '../outlet/restaurants/restaurants.componen
 import { ShopsComponent } from '../outlet/shops/shops.component';
 import { RestaurantComponent } from '../outlet/restaurants/restaurant/restaurant.component';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { TypeFilterComponent } from '../outlet/type-filter/type-filter.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,9 @@ const routes: Routes = [
   ]}, 
   { path: 'restaurant/:id', component: RestaurantComponent, children: [
     { path: 'restaurant/:id', component: NavbarComponent }
+  ]},
+  { path: 'restaurants/:id', component: TypeFilterComponent, children: [
+    { path: 'restarants/:id', component: NavbarComponent }
   ]}
 ]
  
