@@ -20,7 +20,9 @@ const routes: Routes = [
     { path: '', component: FooterComponent}
   ]}, 
   { path: 'restaurant/:id', component: RestaurantComponent, children: [
-    { path: 'restaurant/:id', component: NavbarComponent }
+    { path: 'restaurant/:id', component: NavbarComponent },
+    { path: 'restaurant/:id', component: FooterComponent},
+    { path: 'restaurant?:id', component: CartComponent}
   ]},
   { path: 'restaurants/:id', component: TypeFilterComponent, children: [
     { path: 'restarants/:id', component: NavbarComponent }

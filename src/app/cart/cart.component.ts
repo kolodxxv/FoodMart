@@ -24,6 +24,7 @@ export class CartComponent {
 
   clearEntries () {
     this.store.dispatch(clearCart())
+    
   }
 
 }

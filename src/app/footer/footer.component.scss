@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   height: auto;
-  max-width: 1440px;
+  max-width: 1640px;
   padding-inline-start: 15px;
   margin-inline-end: auto;
   box-shadow: 1px 1px 1px 1px;
@@ -79,8 +79,32 @@ img {
   margin-top: 20px;
 }
 
-.docs .contacts {
+.docs {
   display: flex;
   flex-direction: column;
   width: 45%;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+
+#docs {
+  font-size: 1rem;
+}
+
+#contacts {
+  font-size: 1rem;
+}
+
+span {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+a {
+  font-size: 12px;
+  font-weight: 500;
 }

@@ -1,3 +1,12 @@
 <div class="cart">
-  <h1>Cart</h1>
+  <div class="context">
+    <div class="shopping-values">
+      <div class="total-price">{{ totalPrice$ | async | number: '1.2-2'}} MDL</div>
+      <p>Cart</p>
+      <div class="counter">
+        <img alt="icon" src="https://www.straus.md/basket-white-icon.svg">
+        <div class="value">{{ countProducts$ | async }}</div>
+      </div>
+    </div>
+  </div>
 </div>

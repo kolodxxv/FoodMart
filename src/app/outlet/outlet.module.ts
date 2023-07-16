@@ -9,6 +9,8 @@ import { NavbarModule } from '../navbar/navbar.module';
 import { TypeFilterComponent } from './type-filter/type-filter.component';
 import { ProductDialogComponent } from './restaurants/restaurant/product-dialog/product-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog'
+import { CartModule } from '../cart/cart.module';
+import { FooterModule } from '../footer/footer.module';
 
 
 
@@ -18,7 +20,9 @@ import { MatDialogModule } from '@angular/material/dialog'
     CommonModule,
     RouterModule,
     NavbarModule,
-    MatDialogModule
+    MatDialogModule,
+    FooterModule,
+    CartModule
   ],
   exports: [
     RestaurantsComponent, 
