@@ -1,5 +1,5 @@
-<div class="cart">
-  <div class="context">
+<div class="cart" *ngIf="(countProducts$ | async) as counter">
+  <div class="context" *ngIf="counter">
     <div class="shopping-values">
       <div class="total-price">{{ totalPrice$ | async | number: '1.2-2'}} MDL</div>
       <p>Cart</p>
