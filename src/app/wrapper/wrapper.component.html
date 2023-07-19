@@ -20,10 +20,10 @@
                         (selectType)="selectType($event)">
   </app-slider-component>
   <!-- Content Component -->
-  <div *ngIf="selectedIndex === 0">
+  <div class="content" *ngIf="selectedIndex === 0">
     <app-restaurants-component></app-restaurants-component>
   </div>
-  <div *ngIf="selectedIndex === 1">
+  <div class="content" *ngIf="selectedIndex === 1">
     <app-shops-component></app-shops-component>
   </div>
 </div>
