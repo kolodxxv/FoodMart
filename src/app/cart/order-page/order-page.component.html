@@ -1,0 +1,24 @@
+<header class="headr">
+  <mat-icon class="back" (click)="redirectBack()">arrow_circle_left</mat-icon>
+  <h2>Your order</h2>
+  <div class="login" (click)="redirectByEventType('/login')">
+    <mat-icon class="login-ico">perm_identity</mat-icon>
+    <p class="login-p">Login</p>
+  </div>
+</header>
+<div class="body">
+  <div class="item" *ngFor="let entry of (allProds$ | async)">
+    <div class="product-img">
+      <img src="{{entry.context.imageUrl}}" alt="img">
+    </div>
+    <div class="product-name">
+      {{ entry.context.name }}
+    </div>
+    <div class="product-info">
+      {{ entry.context.info }}
+    </div>
+    <div class="counter">
+      {{ countProducts$ | async }}
+    </div>
+  </div>
+</div>

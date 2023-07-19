@@ -9,6 +9,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
 import { TypeFilterComponent } from '../outlet/type-filter/type-filter.component';
 import { CartComponent } from '../cart/cart.component';
 import { FooterComponent } from '../footer/footer.component';
+import { OrderPageComponent } from '../cart/order-page/order-page.component';
 
 
 const routes: Routes = [
@@ -26,7 +27,8 @@ const routes: Routes = [
   ]},
   { path: 'restaurants/:id', component: TypeFilterComponent, children: [
     { path: 'restarants/:id', component: NavbarComponent }
-  ]}
+  ]},
+  { path: 'cart', component: OrderPageComponent}
 ]
  
 
