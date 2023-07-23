@@ -19,7 +19,7 @@ const routes: Routes = [
     { path: '', component: NavbarComponent},
     { path: '', component: CartComponent},
     { path: '', component: FooterComponent}
-  ]}, 
+  ],} , 
   { path: 'restaurant/:id', component: RestaurantComponent, children: [
     { path: 'restaurant/:id', component: NavbarComponent },
     { path: 'restaurant/:id', component: FooterComponent},
@@ -33,7 +33,7 @@ const routes: Routes = [
  
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: "reload" })],
   exports: [RouterModule]
 })
 export class WrapperRoutingModule { }

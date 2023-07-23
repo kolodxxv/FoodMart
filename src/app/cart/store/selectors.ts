@@ -2,6 +2,7 @@ import { Menu } from "src/app/outlet/restaurants/shared/models/menu-model";
 import { createFeatureSelector, createSelector } from "@ngrx/store";
 
 
+
 export interface ProductGroup {
   product: Menu;
   count: number;
@@ -26,11 +27,18 @@ export const selecCountProducts = createSelector(
   export const selectAllProducts = createSelector(
     createFeatureSelector('cartEntries'),
     (state: Menu[]) => {
-      var allProds: any[] = []
-      state.forEach(p => allProds.push(p))
-      return allProds;
+      var allProds: any[] = [];
+      const uniqueIds = new Set();
+      state.filter(item => {
+        if (uniqueIds.has(item.context.id)){
+          return false
+        } uniqueIds.add(item.context.id)
+         return allProds.push(item)
+      })
+       return allProds;
     }
     );
+
 
   export const selectGroupedCartEntries = createSelector(
     createFeatureSelector('cartEntries'),

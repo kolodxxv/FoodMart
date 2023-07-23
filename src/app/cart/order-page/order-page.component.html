@@ -1,24 +1,33 @@
 <header class="headr">
   <mat-icon class="back" (click)="redirectBack()">arrow_circle_left</mat-icon>
   <h2>Your order</h2>
-  <div class="login" (click)="redirectByEventType('/login')">
+  <div *ngIf="!currentUser" class="login" (click)="redirectByEventType('/login')">
     <mat-icon class="login-ico">perm_identity</mat-icon>
     <p class="login-p">Login</p>
+  </div>
+  <div *ngIf="currentUser" class="login">
+    <mat-icon class="account-ico">account_circle</mat-icon>
+    <div class="current-user">{{currentUser}}</div>
   </div>
 </header>
 <div class="body">
   <div class="item" *ngFor="let entry of (allProds$ | async)">
-    <div class="product-img">
-      <img src="{{entry.context.imageUrl}}" alt="img">
-    </div>
-    <div class="product-name">
-      {{ entry.context.name }}
-    </div>
-    <div class="product-info">
-      {{ entry.context.info }}
-    </div>
-    <div class="counter">
-      {{ countProducts$ | async }}
-    </div>
+      <div class="product-img">
+        <img src="{{entry.context.imageUrl}}" alt="img">
+      </div>
+      <div class="product-name">
+        {{ entry.context.name }}
+      </div>
+      <div class="product-info">
+        {{ entry.context.info }}
+      </div>
+      <div class="counter">
+        <button mat-button class="minus" (click)="removeSome(entry)">-</button>
+        
+        <button mat-button class="plus" (click)="addSome(entry)" >+</button>
+      </div>
+  </div>
+  <div class="cart-controls">
+    <button mat-button (click)="clearCart()">Clear All</button>
   </div>
 </div>

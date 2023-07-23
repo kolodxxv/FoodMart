@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { clearCart } from '../store/actions';
+import { Observable, take } from 'rxjs';
+import { clearCart, RemoveProduct, addProduct } from '../store/actions';
 import { selecCountProducts, selectAllProducts, selectGroupedCartEntries, selectTotalPrice } from '../store/selectors';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
@@ -13,10 +13,13 @@ import { Location } from '@angular/common';
 })
 export class OrderPageComponent {
 
+  public currentUser = localStorage.getItem('username')
+
   cartEntries$: Observable<any>;
   countProducts$: Observable<number>;
   totalPrice$: Observable<number>;
   allProds$: Observable<any>;
+  
 
   constructor(
     private store: Store,
@@ -25,8 +28,20 @@ export class OrderPageComponent {
   ) {
     this.cartEntries$ = store.select(selectGroupedCartEntries);
     this.countProducts$ = store.select(selecCountProducts);
-    this.totalPrice$ = this.store.select(selectTotalPrice)
-    this.allProds$ = this.store.select(selectAllProducts)
+    this.totalPrice$ = this.store.select(selectTotalPrice);
+    this.allProds$ = this.store.select(selectAllProducts);
+  }
+
+  public addSome(entry: any) {
+    this.store.dispatch(addProduct(entry.product))
+  }
+
+  public removeSome(entry: any) {
+    this.store.dispatch(RemoveProduct(entry.product))
+  }
+
+  public clearCart() {
+    this.store.dispatch(clearCart())
   }
 
   public redirectByEventType(url: string): void {
@@ -36,4 +51,6 @@ export class OrderPageComponent {
   public redirectBack(): void {
     this.location.back()
   }
+
+ 
 }

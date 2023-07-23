@@ -1,5 +1,5 @@
 import { Menu } from "src/app/outlet/restaurants/shared/models/menu-model";
-import { createReducer, on } from "@ngrx/store";
+import { ActionReducer, UPDATE, createReducer, on, INIT } from "@ngrx/store";
 import { addProduct, clearCart, RemoveProduct } from "./actions";
 
 export const InitialCartEntries: Menu[] = [];
@@ -23,3 +23,21 @@ export const cartReducer = createReducer(
     return entriesClone;
   })
 )
+
+export const metaReducerLocalStorage = (reducer: ActionReducer<any>): ActionReducer<any> => {
+  return (state, action) => {
+    if (action.type === INIT || action.type == UPDATE) {
+      const storageValue = localStorage.getItem("state");
+      if (storageValue) {
+        try {
+          return JSON.parse(storageValue);
+        } catch {
+          localStorage.removeItem("state")
+        }
+      }
+    }
+    const nextState = reducer(state, action);
+    localStorage.setItem("state", JSON.stringify(nextState));
+    return nextState
+  }
+}

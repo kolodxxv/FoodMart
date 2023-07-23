@@ -9,7 +9,7 @@ import { NavbarModule } from './navbar/navbar.module';
 import { WrapperModule } from './wrapper/wrapper.module';
 import { LoginModule } from './login/login.module';
 import { StoreModule } from '@ngrx/store';
-import { cartReducer } from './cart/store/reducer';
+import { cartReducer, metaReducerLocalStorage } from './cart/store/reducer';
 
 
 
@@ -23,7 +23,7 @@ import { cartReducer } from './cart/store/reducer';
     RouterModule,
     WrapperModule,
     LoginModule,
-    StoreModule.forRoot({ cartEntries: cartReducer})
+    StoreModule.forRoot({ cartEntries: cartReducer}, { metaReducers: [metaReducerLocalStorage]})
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],

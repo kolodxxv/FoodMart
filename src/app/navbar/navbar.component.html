@@ -33,16 +33,16 @@
         <mat-icon id="close-icon">close</mat-icon>
       </button>
       <mat-nav-list>
-        <h1 id="greet-nav">Hey there!</h1>
-        <mat-list-item> 
+        <h1 id="greet-nav">Hey there {{ currentUser }}!</h1>
+        <mat-list-item (click)="redirectByEventType('/')"> 
           <mat-icon matListItemIcon>home</mat-icon>
-          <span matLine (click)="redirectByEventType('/')">Home</span>
+          <span matLine>Home</span>
         </mat-list-item>
-        <mat-list-item>
+        <mat-list-item *ngIf="currentUser">
           <mat-icon matListItemIcon>account_circle</mat-icon>
           <span matLine>Account</span>
         </mat-list-item>
-        <mat-list-item>
+        <mat-list-item (click)="redirectByEventType('cart')">
           <mat-icon matListItemIcon>shopping_cart</mat-icon>
           <span matLine>Cart</span>
         </mat-list-item>
@@ -50,9 +50,13 @@
           <mat-icon matListItemIcon>info</mat-icon>
           <span matLine>Info</span>
         </mat-list-item>
-        <mat-list-item>
+        <mat-list-item *ngIf="!currentUser" (click)="redirectByEventType('login')">
           <mat-icon matListItemIcon>login</mat-icon>
-          <span matLine (click)="redirectByEventType('login')">Login</span>
+          <span matLine>Login</span>
+        </mat-list-item>
+        <mat-list-item *ngIf="currentUser" (click)="logoutUser();sidenav.close()">
+          <mat-icon matListItemIcon>logout</mat-icon>
+          <span matLine>Logout</span>
         </mat-list-item>
       </mat-nav-list>
     </mat-sidenav>

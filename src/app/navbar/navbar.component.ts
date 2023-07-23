@@ -14,8 +14,10 @@ import { selecCountProducts, selectTotalPrice } from '../cart/store/selectors';
 export class NavbarComponent {
 
   public responsive!: boolean;
+  public isShowing!: boolean;
   countProducts$: Observable<number>;
   totalPrice$: Observable<number>;
+  public currentUser = localStorage.getItem('username')
 
   constructor(
     private observer: BreakpointObserver,
@@ -41,6 +43,11 @@ export class NavbarComponent {
       }
     })
   })
+  }
+
+  logoutUser() {
+    localStorage.removeItem('username')
+    location.reload()
   }
    
 }
