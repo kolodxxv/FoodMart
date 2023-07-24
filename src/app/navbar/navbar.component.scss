@@ -2,6 +2,7 @@ mat-toolbar .regular {
     color: rgb(255, 255, 255);
     background-color: white;
     height: 100px;
+    box-shadow: 0 8px 15px rgb(54 48 48  / 15%);
 
     .search-form-reg {
         position: relative;
@@ -15,6 +16,8 @@ mat-toolbar .responsive {
     color: rgb(255, 255, 255);
     background-color: white;
     height: 145px;
+    box-shadow: 0 8px 15px rgb(54 48 48  / 15%);
+    
     
     .search-form {
         position: relative;
@@ -84,9 +87,6 @@ mat-sidenav {
 }
 
 // Regular view
-
-
-
 #search-input-reg {
     width: 55%;
     border-radius: 15px;
@@ -121,7 +121,6 @@ mat-sidenav {
 }
 
 .banner {
-    
     width: 90%;
     border-radius: 16px;
     height: 270px;

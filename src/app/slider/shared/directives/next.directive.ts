@@ -21,4 +21,12 @@ export class NextDirective {
     elem.append(item[0]);
    }
 
+   @HostListener('keydown') onKeyDown(e: any) {
+    if (e.keyCode == 39) {
+      let elem = this.el.nativeElement.parentElement.parentElement.children[0];
+      let item = elem.getElementsByClassName("item");
+      elem.append(item[0]);
+    }
+   }
+
 }

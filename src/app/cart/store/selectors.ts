@@ -27,15 +27,18 @@ export const selecCountProducts = createSelector(
   export const selectAllProducts = createSelector(
     createFeatureSelector('cartEntries'),
     (state: Menu[]) => {
-      var allProds: any[] = [];
-      const uniqueIds = new Set();
-      state.filter(item => {
-        if (uniqueIds.has(item.context.id)){
-          return false
-        } uniqueIds.add(item.context.id)
-         return allProds.push(item)
-      })
-       return allProds;
+      var allProds: Map<string, ProductGroup> = new Map;
+      
+      state.forEach(item => {
+        if (allProds.get(item.context.id)) {
+          (allProds.get(item.context.id) as ProductGroup).count++;
+        } else { 
+          allProds.set(item.context.id, {product: item, count: 1})
+        }
+        })
+
+        const sortedMap = new Map([...allProds.entries()].sort());
+       return Array.from(sortedMap.values());
     }
     );
 

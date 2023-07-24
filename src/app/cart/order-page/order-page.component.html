@@ -11,23 +11,68 @@
   </div>
 </header>
 <div class="body">
+  <!-- TODO: Empty Cart -->
   <div class="item" *ngFor="let entry of (allProds$ | async)">
       <div class="product-img">
-        <img src="{{entry.context.imageUrl}}" alt="img">
+        <img src="{{entry.product.context.imageUrl}}" alt="img">
       </div>
-      <div class="product-name">
-        {{ entry.context.name }}
-      </div>
-      <div class="product-info">
-        {{ entry.context.info }}
-      </div>
+      <p class="product-name">
+        {{ entry.product.context.name }}
+      </p>
+      <span class="product-info">
+        {{ entry.product.context.info }}
+      </span>
+      <button class="erase-product" (click)="removeProd(entry)">
+        <mat-icon>delete</mat-icon>
+      </button>
       <div class="counter">
         <button mat-button class="minus" (click)="removeSome(entry)">-</button>
-        
+        <span class="count">{{ entry.count }}</span>
         <button mat-button class="plus" (click)="addSome(entry)" >+</button>
+      </div>
+      <div class="product-price">
       </div>
   </div>
   <div class="cart-controls">
     <button mat-button (click)="clearCart()">Clear All</button>
   </div>
 </div>
+<aside>
+  <div class="details-container">
+    <div class="sum-container">
+      <!-- <img alt src="https://www.straus.md/border.svg" class="img-border"> -->
+      <div class="oder-summary">
+        <h4>Order summary</h4>
+      </div>
+      <ul role="list" class="order-details">
+        <li class="tot-prod">
+          <span class="tot-sp">
+            Total Products
+          </span>
+          <div class="tot-pay">
+            <p class="tot-pay-p">{{totalPrice$ | async}} MDL</p>
+          </div>
+        </li>
+        <li class="tot-prod">
+          <span class="tot-sp">
+            Delivery
+          </span>
+          <span>
+            39 MDL
+          </span>
+        </li>
+        <li class="tot-ordr">
+          <span class="tot-ordr-sp">
+            Total
+          </span>
+          <div class="tot-ordr-dv">
+            <p>
+              {{totalPrice$ | async}} MDL
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <button mat-button class="next-step">Next</button>
+</aside>

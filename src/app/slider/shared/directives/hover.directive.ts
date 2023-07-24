@@ -8,7 +8,7 @@ export class HoverDirective {
   constructor(private el: ElementRef) { }
 
   @HostListener('mouseenter')onMouseEnter(){
-    this.el.nativeElement.style.backgroundColor = 'purple';
+    this.el.nativeElement.style.backgroundColor = 'rgb(212, 42, 183)';
   }
 
   @HostListener('mouseleave')onMouseLeave(){

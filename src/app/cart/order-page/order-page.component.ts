@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable, take } from 'rxjs';
-import { clearCart, RemoveProduct, addProduct } from '../store/actions';
+import { clearCart, RemoveProduct, addProduct, RemoveAll } from '../store/actions';
 import { selecCountProducts, selectAllProducts, selectGroupedCartEntries, selectTotalPrice } from '../store/selectors';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
@@ -38,6 +38,10 @@ export class OrderPageComponent {
 
   public removeSome(entry: any) {
     this.store.dispatch(RemoveProduct(entry.product))
+  }
+
+  public removeProd(entry: any) {
+    this.store.dispatch(RemoveAll(entry.product))
   }
 
   public clearCart() {
