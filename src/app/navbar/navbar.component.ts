@@ -15,8 +15,10 @@ export class NavbarComponent {
 
   public responsive!: boolean;
   public isShowing!: boolean;
-  countProducts$: Observable<number>;
-  totalPrice$: Observable<number>;
+  public searchText: string = '';
+
+  public countProducts$: Observable<number>;
+  public totalPrice$: Observable<number>;
   public currentUser = localStorage.getItem('username')
 
   constructor(
@@ -48,6 +50,11 @@ export class NavbarComponent {
   logoutUser() {
     localStorage.removeItem('username')
     location.reload()
+  }
+
+  onSearchTextEntered(value: string) {
+    this.searchText = value;
+    console.log(this.searchText)
   }
    
 }

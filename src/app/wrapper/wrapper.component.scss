@@ -108,8 +108,6 @@ body {
   background-repeat: no-repeat !important;
 }
 
-
-
 .active-service {
   display: flex;
   align-items: flex-start;
@@ -134,7 +132,7 @@ span {
   line-height: 21px;
   word-break: break-word;
 }
-
+// WRAPPER-END
 // SLIDER-START
 .slider-container {
   padding-top: 30px;
@@ -168,12 +166,8 @@ span {
 
 .content-container {
   background: white;
+  border-radius: 2rem 2rem 2rem 2rem;
 }
-
-// .content {
-
-// }
-
 
 // FOOTER-START
 footer {

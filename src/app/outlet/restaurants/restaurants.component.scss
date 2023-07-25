@@ -1,16 +1,31 @@
 .body {
   background-color: rgb(255, 255, 255);
   max-width: 1440px;
+  margin-left: 20px;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  overflow: hidden;
+  
 }
 
 .container {
   display: grid;
-  gap: 10px;
+  gap: 5px;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   padding-inline: 0px;
   list-style-type: none;
   
- 
+}
+
+h1 {
+  font-size: 36px;
+  line-height: 44px;
+  padding-bottom: 20px;
+  margin-left: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
 }
 
 .item {
@@ -18,7 +33,7 @@
   position: relative;
   margin-bottom: 12px;
   border-radius: 16px;
-  width: 100%;
+  width: 97%;
   height: 180px;
   cursor: pointer;
 }

@@ -1,16 +1,18 @@
 .container {
   display: flex;
   align-items: center;
-  height: auto;
-  max-width: 1640px;
+  max-height: 500px;
+  max-width: 100%;
   // padding-inline-start: 15px;
   margin-inline-end: auto;
-  box-shadow: 1px 1px 1px 1px;
+  box-shadow: 0 8px 15px rgb(54 48 48  / 15%);
+  // height: 300px;
 }
 
 .context {
   width: 100%;
   background: #FFFFFF;
+  // height: 300px;
 }
 
 .wrapper {
@@ -19,7 +21,6 @@
   justify-content: center;
   padding-inline-start: 15px;
   padding-inline-end: 15px;
-  height: auto;
   max-width: 1440px;
   margin-inline-start: auto;
   margin-inline-end: auto;
@@ -31,14 +32,14 @@
   align-items: flex-start;
   justify-content: space-between;
   padding-top: 30px;
-  padding-bottom: 90px;
+  padding-bottom: 30px;
   width: 100%;
 }
 
 .mobile-app {
   display: flex;
   flex-direction: column;
-  width: 45%;
+  width: 75%;
 }
 
 h3 {
@@ -55,14 +56,9 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
-  width: 100%;
+  width: 50%;
   margin-top: 20px;
 }
-
-// .spp-store, .google-play {
-//   width: 45%;
-// }
 
 img {
   max-width: 100%;
@@ -84,6 +80,10 @@ img {
   margin-left: 15px;
 }
 
+.apple {
+  width: 70%
+}
+
 .info {
   display: flex;
   flex-direction: column;
@@ -94,7 +94,6 @@ img {
   justify-content: space-between;
   width: 100%;
   margin-top: 20px;
- 
 }
 
 .docs {
