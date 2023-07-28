@@ -1,35 +1,54 @@
+<div class="body">
 <!-- Navigation -->
-<app-navbar-component></app-navbar-component>
-<div class="main">
-  <div class="banner-container">
-    <img alt="banner" src="assets/img/banner1.png" class="banner">
-  </div>
-  <div class="container-buttons">
-    <a *ngFor="let item of items; let i = index"
+  <header class="navbar-container">
+    <app-navbar-component></app-navbar-component>
+  </header>
+<!-- Wrapper Component -->
+  <div class="main">
+    <!-- Banner -->
+    <!-- TODO: CAROUSEL -->
+    <div class="banner-container" [style.width] = "responsive ? '680px' : '1250px'">
+      <img alt="banner" src="assets/img/banner1.png" class="banner">
+    </div>
+  <!-- Outlet Component -->
+    <div class="container-buttons">
+      <a *ngFor="let item of items; let i = index" 
+      [style.width] = "responsive ? '32%' : '440px'"
       [ngClass]="{'active-service': selectedIndex === i, 'service': !toggle}"
-      (click)="selectedIndex=i">
-      <span>{{item}}</span></a>
-  </div>
+      (click)="selectedIndex=i" [attr.aria-label]="i">
+        <span>{{item}}</span></a>
+    </div>
   <!-- Slider Component -->
-  <app-slider-component name="slider" 
-  *ngIf="selectedIndex === 0" [foodArr]='foodArr' 
-                        (selectType)="selectType($event)">
-  </app-slider-component>
-  <app-slider-component name="slider" 
-  *ngIf="selectedIndex === 1" [foodArr]='grocery' 
-                        (selectType)="selectType($event)">
-  </app-slider-component>
+    <div class="slider-container">
+      <div class="title-ctnr">
+        <div class="title-dv">
+          <h3 class="title-h">What would you like today?</h3>
+        </div>
+      </div>
+      <div class="component-container">
+        <app-slider-component name="slider" *ngIf="selectedIndex === 0" [foodArr]='foodArr' 
+                            (selectType)="selectType($event)">
+        </app-slider-component>
+        <app-slider-component name="slider" *ngIf="selectedIndex === 1" [foodArr]='grocery' 
+                            (selectType)="selectType($event)">
+        </app-slider-component>
+      </div>
+    </div>
   <!-- Content Component -->
-  <div class="content" *ngIf="selectedIndex === 0">
-    <app-restaurants-component></app-restaurants-component>
+    <div class="content-container">
+      <div class="content" *ngIf="selectedIndex === 0">
+        <app-restaurants-component></app-restaurants-component>
+      </div>
+      <div class="content" *ngIf="selectedIndex === 1">
+        <app-shops-component></app-shops-component>
+      </div>
+    </div>
   </div>
-  <div class="content" *ngIf="selectedIndex === 1">
-    <app-shops-component></app-shops-component>
-  </div>
+<!-- Footer -->
+  <footer>
+    <app-cart-component></app-cart-component>
+    <app-footer></app-footer>
+  </footer>
 </div>
-<footer>
-  <app-cart-component></app-cart-component>
-  <app-footer></app-footer>
-</footer>
 
-<!-- <app-cart-component></app-cart-component> -->
+

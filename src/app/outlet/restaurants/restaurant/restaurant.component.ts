@@ -7,6 +7,7 @@ import { OutletsService } from '../shared/services/outlets.service';
 import { Outlets } from '../shared/models/restaurants-model';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ProductDialogComponent } from './product-dialog/product-dialog.component';
+import { DialogConfig } from '@angular/cdk/dialog';
 
 
 
@@ -70,7 +71,10 @@ export class RestaurantComponent {
 
   openDialog(){
     const dialogCongif = new MatDialogConfig();
+    dialogCongif.position = { top: '10px'}
     dialogCongif.data = this.currentProduct;
     this.dialog.open(ProductDialogComponent, dialogCongif);
   }
+
+
 }

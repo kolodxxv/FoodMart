@@ -4,22 +4,15 @@
   </div>
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <mat-form-field class="name-input-container">
-      <input matInput id="username" type="text" formControlName="username" 
+      <input matInput id="username" formControlName="username" 
       placeholder="Enter your username">
     </mat-form-field>
     <mat-form-field class="pswd-input-container">
-      <input matInput id="password"  formControlName="password" 
+      <input matInput id="password" formControlName="password" 
       placeholder="Enter your password"
       [type]="hide ? 'password' : 'text'">
       <!-- <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon> -->
     </mat-form-field>
-    <button [routerLink]="['']" routerLinkActive="active" mat-button>Login</button>
+    <button type="submit" mat-button>Login</button>
   </form>
-  
-    
-  
- 
-    
-
- 
 </div>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { BreakpointObserver } from '@angular/cdk/layout';
 
 import { FoodService } from './shared/services/food.service';
 import { foodTypeModel } from './shared/models/food-model';
@@ -20,6 +21,9 @@ export class WrapperComponent {
   public grocery: groceryTypeModel[] = []
   public outlets: Outlets[]
 
+  // Responsive Breakpoint
+  public responsive!: boolean;
+
   // Service Buttons 
   public items: any[] = ['Restaurants', 'Shops', 'Courier'];
   public toggle!: boolean;
@@ -29,11 +33,25 @@ export class WrapperComponent {
     public foodSrvc: FoodService,
     public grcrSrvc: GroceryService,
     public outletSrvc: OutletsService,
-    public router: Router
+    public router: Router,
+    public observer: BreakpointObserver
+
   ) {
     this.foodArr = foodSrvc.getAll()
     this.grocery = grcrSrvc.getAll()
     this.outlets = outletSrvc.getAll()
+  }
+
+  ngAfterViewInit() {
+    setTimeout(() => {
+    this.observer.observe(['(max-width: 900px)']).subscribe((res) => {
+      if (res.matches) {
+        this.responsive = true;
+      } else {
+        this.responsive = false;
+      }
+    })
+  })
   }
 
   public selectType(arg: any): void {
