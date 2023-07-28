@@ -10,25 +10,29 @@ import { TypeFilterComponent } from '../outlet/type-filter/type-filter.component
 import { CartComponent } from '../cart/cart.component';
 import { FooterComponent } from '../footer/footer.component';
 import { OrderPageComponent } from '../cart/order-page/order-page.component';
+import { SearchComponent } from '../outlet/search/search.component';
 
 
 const routes: Routes = [
   { path: '', component: WrapperComponent, children: [
     { path: '', component: RestaurantsComponent },
     { path: '', component: ShopsComponent },
-    { path: '', component: NavbarComponent},
-    { path: '', component: CartComponent},
-    { path: '', component: FooterComponent}
+    { path: '', component: NavbarComponent },
+    { path: '', component: CartComponent },
+    { path: '', component: FooterComponent }
   ],} , 
   { path: 'restaurant/:id', component: RestaurantComponent, children: [
     { path: 'restaurant/:id', component: NavbarComponent },
-    { path: 'restaurant/:id', component: FooterComponent},
-    { path: 'restaurant?:id', component: CartComponent}
+    { path: 'restaurant/:id', component: FooterComponent },
+    { path: 'restaurant?:id', component: CartComponent }
   ]},
   { path: 'restaurants/:id', component: TypeFilterComponent, children: [
     { path: 'restarants/:id', component: NavbarComponent }
   ]},
-  { path: 'cart', component: OrderPageComponent}
+  { path: 'cart', component: OrderPageComponent },
+  { path: 'search', component: SearchComponent, children: [
+    { path: 'search', component: NavbarComponent }
+  ] }
 ]
  
 

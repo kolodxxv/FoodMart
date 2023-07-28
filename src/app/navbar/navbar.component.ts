@@ -1,9 +1,12 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs'
+import { Observable, of } from 'rxjs'
 import { Store } from '@ngrx/store';
 import { selecCountProducts, selectTotalPrice } from '../cart/store/selectors';
+
+import { SearchService } from '../shared/search.service';
+import { FormBuilder } from '@angular/forms';
 
 
 @Component({
@@ -13,9 +16,12 @@ import { selecCountProducts, selectTotalPrice } from '../cart/store/selectors';
 })
 export class NavbarComponent {
 
+  // Search bar value
+  inputValue!: string;
+
   public responsive!: boolean;
   public isShowing!: boolean;
-  public searchText: string = '';
+ 
 
   public countProducts$: Observable<number>;
   public totalPrice$: Observable<number>;
@@ -24,7 +30,9 @@ export class NavbarComponent {
   constructor(
     private observer: BreakpointObserver,
     public router: Router,
-    private store: Store
+    private store: Store,
+    private searchSrvc: SearchService,
+    private fb: FormBuilder
     ) {
       this.countProducts$ = store.select(selecCountProducts);
       this.totalPrice$ = this.store.select(selectTotalPrice)
@@ -52,9 +60,8 @@ export class NavbarComponent {
     location.reload()
   }
 
-  onSearchTextEntered(value: string) {
-    this.searchText = value;
-    console.log(this.searchText)
+  search() {
+    this.searchSrvc.setInputValue(this.inputValue)
   }
-   
+
 }
