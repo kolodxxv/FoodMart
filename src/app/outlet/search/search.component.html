@@ -1,5 +1,8 @@
-<!-- <div class="search-container">
-  <input type="search" [(ngModel)]="enteredSearchValue" (input)="onSearchTextChanged()"
-  id="search-input" placeholder="Search">
+<app-navbar-component></app-navbar-component>
+<div class="container">
+  <div class="items" *ngFor="let restaurant of outlets">
+    <div class="item" *ngIf="restaurant.label.toLowerCase().includes(inputValue)">
+      <div class="name">{{restaurant.label}}</div>
+    </div>
+  </div>
 </div>
-   -->

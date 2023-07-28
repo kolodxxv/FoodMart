@@ -8,9 +8,12 @@ import { ShopComponent } from './shops/shop/shop.component';
 import { NavbarModule } from '../navbar/navbar.module';
 import { TypeFilterComponent } from './type-filter/type-filter.component';
 import { ProductDialogComponent } from './restaurants/restaurant/product-dialog/product-dialog.component';
+import { SearchComponent } from './search/search.component';
+
 import { MatDialogModule } from '@angular/material/dialog'
 import { CartModule } from '../cart/cart.module';
 import { FooterModule } from '../footer/footer.module';
+import { SearchService } from '../shared/search.service';
 
 
 
@@ -36,8 +39,9 @@ import { FooterModule } from '../footer/footer.module';
     ShopComponent,
     TypeFilterComponent,
     ProductDialogComponent,
+    SearchComponent
   ],
-  
+  providers: [SearchService],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class OutletModule { }

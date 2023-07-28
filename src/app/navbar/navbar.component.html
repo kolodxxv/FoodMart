@@ -5,7 +5,11 @@
       <mat-icon id="menu-icon">menu</mat-icon>
     </button>
     <form class="search-form">
-      <input type="search" id="search-input" placeholder="Search">
+      <input [(ngModel)]="inputValue" name="search" (input)="search()"
+      type="search" id="search-input" placeholder="Search">
+      <div class="dropdown" *ngIf="inputValue" (click)="redirectByEventType('search')">
+        Search for {{inputValue}}
+      </div>
       <!-- <app-search (searchedTextChanged)="onSearchTextEntered($event)"></app-search> -->
     </form>
     <mat-icon (click)="redirectByEventType('/')" id="logo-icon">fastfood</mat-icon>
@@ -15,7 +19,12 @@
     <img alt="logo" id="logo-image" src="assets/img/untitled.svg" 
     (click)="redirectByEventType('/')">
     <form class="search-form-reg">
-      <input type="search" id="search-input-reg" placeholder="Search">
+      <input 
+      [(ngModel)]="inputValue" name="search" (input)="search()"
+      type="search" id="search-input-reg" placeholder="Search">
+      <div class="dropdown" *ngIf="inputValue" (click)="redirectByEventType('search')">
+        Search for {{inputValue}}
+      </div>
     </form>
     <button mat-button id="signin-button" (click)="redirectByEventType('login')">
       <span>Login</span>
