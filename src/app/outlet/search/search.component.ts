@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from 'src/app/shared/search.service';
-import { take, map, tap, Observable, filter } from 'rxjs';
-
+import { Router } from '@angular/router';
 import { OutletsService } from '../restaurants/shared/services/outlets.service';
 import { Outlets } from '../restaurants/shared/models/restaurants-model';
 import { MenuService } from '../restaurants/shared/services/menu.service';
@@ -23,7 +22,8 @@ export class SearchComponent {
   constructor(
     private searchSrvc: SearchService,
     public menuSrvc: MenuService,
-    public outletSrvc: OutletsService
+    public outletSrvc: OutletsService,
+    public router: Router
   ) {
     this.menu = menuSrvc.getAll();
     this.outlets = outletSrvc.getAll();
@@ -31,10 +31,12 @@ export class SearchComponent {
       this.inputValue = inputValue;
     })
   }
-  
-  ngOnInit(): void {
-    // console.log(this.searchQuery)
+
+  public redirectByEventType(url: string, outlet: any): void {
+    this.router.navigate([`/${url}`, outlet])
   }
+  
+  
 
   }
 
