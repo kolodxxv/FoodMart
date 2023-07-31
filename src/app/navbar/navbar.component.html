@@ -1,87 +1,116 @@
 <mat-toolbar>
   <!-- Responsive view -->
-  <mat-toolbar-row class="responsive" *ngIf="responsive">
-    <button mat-icon-button id="menu-button" (click)="sidenav.toggle()">
-      <mat-icon id="menu-icon">menu</mat-icon>
-    </button>
-    <form class="search-form">
-      <input [(ngModel)]="inputValue" name="search" (input)="search()"
-      type="search" id="search-input" placeholder="Search">
-      <div class="dropdown" *ngIf="inputValue" (click)="redirectByEventType('search')">
-        Search for {{inputValue}}
-      </div>
-      <!-- <app-search (searchedTextChanged)="onSearchTextEntered($event)"></app-search> -->
-    </form>
-    <mat-icon (click)="redirectByEventType('/')" id="logo-icon">fastfood</mat-icon>
-  </mat-toolbar-row>
-  <!-- Regular view -->
-  <mat-toolbar-row class="regular" *ngIf="responsive === false">
-    <img alt="logo" id="logo-image" src="assets/img/untitled.svg" 
-    (click)="redirectByEventType('/')">
-    <form class="search-form-reg">
-      <input 
-      [(ngModel)]="inputValue" name="search" (input)="search()"
-      type="search" id="search-input-reg" placeholder="Search">
-      <div class="dropdown" *ngIf="inputValue" (click)="redirectByEventType('search')">
-        Search for {{inputValue}}
-      </div>
-    </form>
-    <button mat-button *ngIf="!currentUser" id="signin-button" (click)="redirectByEventType('login')">
-      <span>Login</span>
-      <mat-icon class="acc">account_circle</mat-icon>      
-    </button>
-    <button mat-button *ngIf="currentUser" id="signin-button" (click)="logoutUser()">
-      <mat-icon class="acc">logout</mat-icon>
-      <span>{{currentUser}}</span>
-    </button>
-    <!-- <button mat-button id="cart-button">
-      <span>Cart</span>
-      <mat-icon>shopping_cart</mat-icon>      
-    </button> -->
-  </mat-toolbar-row>   
-</mat-toolbar>
-  <!-- Sidebar Menu -->
-  <mat-sidenav-container class="sidenav-container" >
-    <mat-sidenav #sidenav mode="over" position="end" fixedInViewport="fixed">
-      <button mat-icon-button id="close-menu-button" (click)="sidenav.close()">
-        <mat-icon id="close-icon">close</mat-icon>
-      </button>
-      <mat-nav-list>
-        <h1 id="greet-nav">Hey there {{ currentUser }}!</h1>
-        <mat-list-item (click)="redirectByEventType('/')"> 
-          <mat-icon matListItemIcon>home</mat-icon>
-          <span matLine>Home</span>
-        </mat-list-item>
-        <mat-list-item *ngIf="currentUser">
-          <mat-icon matListItemIcon>account_circle</mat-icon>
-          <span matLine>Account</span>
-        </mat-list-item>
-        <mat-list-item (click)="redirectByEventType('cart')">
-          <mat-icon matListItemIcon>shopping_cart</mat-icon>
-          <span matLine>Cart</span>
-        </mat-list-item>
-        <mat-list-item>
-          <mat-icon matListItemIcon>info</mat-icon>
-          <span matLine>Info</span>
-        </mat-list-item>
-        <mat-list-item *ngIf="!currentUser" (click)="redirectByEventType('login')">
-          <mat-icon matListItemIcon>login</mat-icon>
-          <span matLine>Login</span>
-        </mat-list-item>
-        <mat-list-item *ngIf="currentUser" (click)="logoutUser();sidenav.close()">
-          <mat-icon matListItemIcon>logout</mat-icon>
-          <span matLine>Logout</span>
-        </mat-list-item>
-      </mat-nav-list>
-    </mat-sidenav>
-    <!-- <mat-sidenav-content>
-      <div style="height: 40vh;">
-        <div class="benner-container">
-          <img class="banner" [src]="[componentsBanner]">
+  <ng-container *ngIf="responsive; else templateReg">
+    <mat-toolbar-row class="responsive">
+      <div class="header">
+        <div class="logo-geo-menu">
+          <div class="icon-container">
+            <mat-icon (click)="redirectByEventType('/')" id="logo-icon">fastfood</mat-icon>
+          </div>
+          <div class="geoloc">
+            <button type="button" class="geo-btn" (click)="openDialog()">
+              <mat-icon class="geo-img">location_on</mat-icon>
+              <span class="geo-txt">Add address</span>
+              <mat-icon class="geo-arrow">keyboard_arrow_right</mat-icon>
+            </button>
+          </div>
+          <div class="btn-container">
+            <button mat-icon-button id="menu-button" (click)="sidenav.toggle()">
+              <mat-icon id="menu-icon">menu</mat-icon>
+            </button>
+          </div>
+        </div>
+        <div class="search-container">
+          <form class="search-form">
+            <input [(ngModel)]="inputValue" name="nav-search" (input)="search()"
+            type="search" id="search-input" placeholder="Search">
+            <div class="dropdown" *ngIf="inputValue" (click)="redirectByEventType('search')">
+              Search for {{inputValue}}
+            </div>
+          </form>
         </div>
       </div>
-    </mat-sidenav-content> -->
-  </mat-sidenav-container>
+    </mat-toolbar-row>
+  </ng-container>
+  <!-- Regular view -->
+  <ng-template #templateReg>
+    <mat-toolbar-row class="regular">
+      <div class="logo-container">
+        <img alt="logo" id="logo-image" src="assets/img/untitled.svg" 
+        (click)="redirectByEventType('/')">
+      </div>
+      <div class="geo-search-container">
+        <div class="geo-regular">
+            <button type="button" class="geo-btn" (click)="openDialog()">
+              <mat-icon class="geo-img">location_on</mat-icon>
+              <span class="geo-txt">Add address</span>
+              <mat-icon class="geo-arrow">keyboard_arrow_right</mat-icon>
+            </button>
+        </div>
+        <div class="search-regular">
+          <form class="search-form-reg">
+            <input 
+            [(ngModel)]="inputValue" name="nav-search" (input)="search()"
+            type="search" id="search-input-reg" placeholder="Search">
+            <div class="dropdown" *ngIf="inputValue" (click)="redirectByEventType('search')">
+              Search for {{inputValue}}
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="dummy"></div>
+      <div class="cart-login-container">
+        <button mat-button id="cart-btn" (click)="redirectByEventType('cart')">
+          <mat-icon>shopping_cart</mat-icon>
+          <span>{{totalPrice$ | async}}</span>
+        </button>
+        <button mat-button *ngIf="!currentUser" id="signin-button" (click)="redirectByEventType('login')">
+          <span>Login</span>
+          <mat-icon class="acc">account_circle</mat-icon>      
+        </button>
+        <button mat-button *ngIf="currentUser" id="signin-button" (click)="logoutUser()">
+          <mat-icon class="acc">logout</mat-icon>
+          <span>{{currentUser}}</span>
+        </button>
+      </div>
+    </mat-toolbar-row>   
+  </ng-template>
+</mat-toolbar>
+  <!-- Sidebar Menu -->
+<mat-sidenav-container class="sidenav-container" >
+  <mat-sidenav #sidenav mode="over" position="end" fixedInViewport="fixed">
+    <button mat-icon-button id="close-menu-button" (click)="sidenav.close()">
+      <mat-icon id="close-icon">close</mat-icon>
+    </button>
+    <mat-nav-list>
+      <h1 id="greet-nav">Hey there {{ currentUser }}!</h1>
+      <mat-list-item (click)="redirectByEventType('/')"> 
+        <mat-icon matListItemIcon>home</mat-icon>
+        <span matLine>Home</span>
+      </mat-list-item>
+      <mat-list-item *ngIf="currentUser">
+        <mat-icon matListItemIcon>account_circle</mat-icon>
+        <span matLine>Account</span>
+      </mat-list-item>
+      <mat-list-item (click)="redirectByEventType('cart')">
+        <mat-icon matListItemIcon>shopping_cart</mat-icon>
+        <span matLine>Cart</span>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon matListItemIcon>info</mat-icon>
+        <span matLine>Info</span>
+      </mat-list-item>
+      <mat-list-item *ngIf="!currentUser" (click)="redirectByEventType('login')">
+        <mat-icon matListItemIcon>login</mat-icon>
+        <span matLine>Login</span>
+      </mat-list-item>
+      <mat-list-item *ngIf="currentUser" (click)="logoutUser();sidenav.close()">
+        <mat-icon matListItemIcon>logout</mat-icon>
+        <span matLine>Logout</span>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+</mat-sidenav-container>
 
 
 

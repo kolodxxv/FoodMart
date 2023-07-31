@@ -13,7 +13,8 @@ import { Menu } from '../restaurants/shared/models/menu-model';
 })
 export class SearchComponent {
 
-  inputValue!: string;
+  public inputValue!: string;
+  public searchTab: number = 0;
 
   public menu: Menu[] = [];
   public outlets: Outlets[] = [];

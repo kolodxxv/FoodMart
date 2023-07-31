@@ -10,9 +10,11 @@ import { MatInputModule } from '@angular/material/input'
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppRoutingModule } from '../app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BingMapsAPILoader } from './shared/mapsLoader';
 
 import { NavbarComponent } from './navbar.component';
-import { ResizeDirective } from './resize.directive';
+import { ResizeDirective } from './shared/resize.directive';
+import { MapsComponent } from './maps/maps.component';
 
 
 @NgModule({
@@ -28,11 +30,11 @@ import { ResizeDirective } from './resize.directive';
     FlexLayoutModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
-    
+    ReactiveFormsModule,
   ],
-  declarations: [NavbarComponent, ResizeDirective],
+  declarations: [NavbarComponent, ResizeDirective, MapsComponent],
   exports: [NavbarComponent],
-  bootstrap: [],
+  bootstrap: [MapsComponent],
+  providers: [BingMapsAPILoader]
 })
 export class NavbarModule {}

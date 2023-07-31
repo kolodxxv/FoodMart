@@ -1,20 +1,144 @@
-mat-toolbar .regular {
+// RESPONSIVE VIEW
+mat-toolbar .responsive {
     color: rgb(255, 255, 255);
     background-color: white;
-    height: 100px;
+    height: 145px;
     box-shadow: 0 8px 15px rgb(54 48 48  / 15%);
+}
 
-    .search-form-reg {
-        position: relative;
-        width: 40%;
-        left: 740px;
-        // top: 5px;
-    }
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 100%;
+}
+
+.logo-geo-menu {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25px;
+    height: 40px;
+}
+
+#logo-icon {
+    display: inline-block;
+    position: relative;
+    transform: scale(1.5);
+    color: rgb(237, 42, 179);
+    padding: 0px;
+    margin: auto;
+    display: block;
+    cursor: pointer;
+    max-width: 100%;
+}
+
+// Geolocation bar
+.geoloc {
+    margin-left: 10px;
+    width: 80%;
+}
+
+.geo-btn {
+    display: inline-flex;
+    appearance: none;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    white-space: nowrap;
+    vertical-align: middle;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    width: 100%;
+    line-height: 1.2;
+    border-radius: 1rem;
+    font-weight: 600;
+    height: 45px;
+    padding-inline-end: 1rem;
+    background: #EBECF1;
+    padding: 0px;
+}
+
+.geo-img {
+    display: inline-flex;
+    align-self: center;
+    flex-shrink: 0;
+    margin-inline-end: 0.5rem;
+    color: rgb(237, 42, 179);
+}
+
+.geo-txt {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: left;
+    width: 90%;
+    overflow: hidden;
+    margin-top: 1px;
+    text-overflow: ellipsis;
+}
+
+.geo-arrow {
+    display: inline-flex;
+    align-self: center;
+    flex-shrink: 0;
+    margin-inline-start: 0.5rem;
+}
+
+// Menu-Button
+.btn-container {
+    position: relative;
+}
+
+#menu-button {
+    display: inline-flex;
+    appearance: none;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    white-space: nowrap;
+    vertical-align: middle;
+    width: auto;
+}
+
+#menu-icon {
+    transform: scale(1.5);
+    color: black;
+    background-color: rgb(225, 225, 225);
+    border-radius: 9px;
+}
+
+// Search-bar
+.search-container {
+    margin-top: 0.5rem;
+    margin-inline-end: 0px;
+    margin-bottom: 0px;
+    margin-inline-start: 0px;
+    width: 100%;
+    margin-left: 25px;
+}
+
+#search-input {
+    width: 100%;
+    border-radius: 15px;
+    height: 40px;
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") 
+    no-repeat 13px center;
+    padding: 9px 4px 9px 50px;
+    font-size: large;
 }
 
 .dropdown {
     position: absolute;
-    width: inherit;
+    width: 80%;
     margin-inline: auto;
     max-width: unset;
     padding-inline: 1rem;
@@ -25,57 +149,103 @@ mat-toolbar .regular {
     max-height: 500px;
     overflow-y: scroll;
 }
-
-mat-toolbar .responsive {
+// RESPONSIVE-END
+// REGULAR VIEW
+mat-toolbar .regular {
     color: rgb(255, 255, 255);
     background-color: white;
-    height: 145px;
+    height: 100px;
     box-shadow: 0 8px 15px rgb(54 48 48  / 15%);
-    
-    
-    .search-form {
-        position: relative;
-        top: 40px;
-        width: 100%;
-    }
+}
 
-    #menu-button {
-        position: absolute;
-        right: 20px;
-        top: 20px;
-    }
-
-    #menu-icon {
-        transform: scale(1.7);
-        color: black;
-        background-color: rgb(225, 225, 225);
-        border-radius: 7px;
-    }
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #logo-image {
-    position: absolute;
-    width: 300px;
+    display: block;
+    max-width: 100%;
+    width: initial;
     height: 150px;
     cursor: pointer;
+    opacity: 1;
 }
 
+.geo-search-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.geo-regular {
+    width: 270px;
+    margin: 0px 15px;
+}
+
+.search-regular {
+    margin-top: 0px;
+    margin-inline: 0.5rem 0px;
+    margin-bottom: 0px;
+   
+}
+
+.search-form-reg {
+    position: relative;
+    z-index: 9;
+}
+
+#search-input-reg {
+    border-radius: 15px;
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") 
+    no-repeat 13px center;
+    padding: 5px 4px 9px 50px;
+    min-width: 0px;
+    width: 300px;
+    height: 45px;
+}
+
+.dummy {
+    flex: 1;
+    align-items: stretch;
+    display: block;
+}
+
+.cart-login-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    float: right;
+    gap: 20px;
+    
+}
+
+#cart-btn {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    color: black;
+    transform: scale(1.5);
+}
+
+#signin-button {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-right: 15px;
+    color: black;
+    transform: scale(1.5);
+    position: relative;
+}
+
+span {
+    font-size: 11px;
+}
+// REGULAR-END
+// SIDENAV
 mat-sidenav {
-    width: 350px;
-}
-
-.regular {
-    height: 140px;
-}
-
-
-#logo-icon {
-    position: absolute;
-    transform: scale(2);
-    color: rgb(237, 42, 179);
-    left: 20px;
-    top: 25px;
-    cursor: pointer;
+    width: 250px;
 }
 
 #close-menu-button {
@@ -87,54 +257,9 @@ mat-sidenav {
     text-indent: 20px;
     font-size: 28px;
     font-weight: 500;
-    // top: 20px
 }
-
-#search-input {
-    width: 100%;
-    border-radius: 15px;
-    height: 50px;
-    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") 
-    no-repeat 13px center;
-    padding: 9px 4px 9px 50px;
-    font-size: large;
-}
-
-// Regular view
-#search-input-reg {
-    width: 55%;
-    border-radius: 15px;
-    height: 37px;
-    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") 
-    no-repeat 13px center;
-    padding: 5px 4px 9px 50px;
-    font-size: large;
-}
-
-#signin-button {
-    position: absolute;
-    right: 55px;
-    color: black;
-    transform: scale(1.7);
-}
-
-#cart-button {
-    position: absolute;
-    right: 195px;
-    color: black;
-    transform: scale(1.7);
-}
-
-.acc {
-    transform: scale(1.1);
-}
-
-span {
-    font-size: 11px;
-}
-
-// Banner
-
+// SIDENAV-END
+// BANNER
 .banner-container {
     display: flex;
     -webkit-box-pack: center;
@@ -150,14 +275,8 @@ span {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
 }
 
-.shopping-values {
-    background-color: purple;
-    display: flexbox;
-    justify-content: flex-end;
-}
 
 
 

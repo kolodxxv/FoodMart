@@ -9,6 +9,7 @@ import { groceryTypeModel } from './shared/models/grocery-model';
 
 import { Outlets } from '../outlet/restaurants/shared/models/restaurants-model';
 import { OutletsService } from '../outlet/restaurants/shared/services/outlets.service';
+import { SliderInterface } from './banner/shared/slider.interface';
 
 @Component({
   selector: 'app-wrapper',
@@ -28,6 +29,12 @@ export class WrapperComponent {
   public items: any[] = ['Restaurants', 'Shops', 'Courier'];
   public toggle!: boolean;
   public selectedIndex: any = 0;
+
+  // Banner Slides
+  public slides: SliderInterface[] = [
+    {url: '/assets/summer-banner.png', title: 'one' },
+    {url: '/assets/img/banner1.png', title: 'two'}
+  ]
 
   constructor(
     public foodSrvc: FoodService,

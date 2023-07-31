@@ -7,9 +7,11 @@
   <div class="main">
     <!-- Banner -->
     <!-- TODO: CAROUSEL -->
-    <div class="banner-container" [style.width] = "responsive ? '680px' : '1250px'">
+    <div style="width:500px;height:200px;margin: 0 auto"></div>
+    <app-banner [slides]="slides"></app-banner>
+    <!-- <div class="banner-container" [style.width] = "responsive ? '680px' : '1150px'">
       <img alt="banner" src="assets/img/banner1.png" class="banner">
-    </div>
+    </div> -->
   <!-- Outlet Component -->
     <div class="container-buttons">
       <a *ngFor="let item of items; let i = index" 

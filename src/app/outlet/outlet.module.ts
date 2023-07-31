@@ -11,6 +11,8 @@ import { ProductDialogComponent } from './restaurants/restaurant/product-dialog/
 import { SearchComponent } from './search/search.component';
 
 import { MatDialogModule } from '@angular/material/dialog'
+import { MatTabsModule } from '@angular/material/tabs';
+
 import { CartModule } from '../cart/cart.module';
 import { FooterModule } from '../footer/footer.module';
 import { SearchService } from '../shared/search.service';
@@ -24,6 +26,7 @@ import { SearchService } from '../shared/search.service';
     RouterModule,
     NavbarModule,
     MatDialogModule,
+    MatTabsModule,
     FooterModule,
     CartModule
   ],

@@ -5,20 +5,18 @@ import { WrapperComponent } from './wrapper.component';
 
 import { SliderModule } from '../slider/slider.module';
 import { OutletModule } from '../outlet/outlet.module';
-import { BackgroundDirective } from './background.directive';
+import { BackgroundDirective } from './shared/directives/background.directive';
 import { NavbarModule } from '../navbar/navbar.module';
 import { CartModule } from '../cart/cart.module';
 import { FooterModule } from '../footer/footer.module';
-
-
-
-
+import { BannerComponent } from './banner/banner.component';
 
 
 @NgModule({
   declarations: [
     WrapperComponent,
-    BackgroundDirective
+    BackgroundDirective,
+    BannerComponent
   ],
   imports: [
     CommonModule,
