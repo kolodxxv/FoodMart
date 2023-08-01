@@ -1,7 +1,18 @@
 <div class="slider">
-  <div>
-    <div class="leftArrow"></div>
-    <div class="rightArrow"></div>
+  <!-- Arrow controls -->
+  <!-- <div>
+    <div (click)="goToPrevious()" class="leftArrow">
+      <mat-icon>keyboard_arrow_left</mat-icon>
+    </div>
+    <div (click)="goToNext()" class="rightArrow">
+      <mat-icon>keyboard_arrow_right</mat-icon>
+    </div>
+  </div> -->
+  <div class="slide" [ngStyle]="{ 'background-image': getCurrentSlideUrl() }"></div>
+  <div class="dotsContainer">
+    <div *ngFor="let slide of slides; let slideIndex = index"
+      class="dot" (click)="goToSlide(slideIndex)" [attr.span]="slideIndex"
+      [style.color]="currentIndex===slideIndex ? 'black' : 'gray'"
+    >●</div>
   </div>
-  <div class="slide" [ngStyle]="{'background-image': getCurrentSlideUrl()}"></div>
 </div>

@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
+
 import { WrapperRoutingModule } from './wrapper-routing.module';
 import { WrapperComponent } from './wrapper.component';
-
 import { SliderModule } from '../slider/slider.module';
 import { OutletModule } from '../outlet/outlet.module';
 import { BackgroundDirective } from './shared/directives/background.directive';
@@ -25,7 +26,8 @@ import { BannerComponent } from './banner/banner.component';
     OutletModule,
     NavbarModule,
     CartModule,
-    FooterModule
+    FooterModule,
+    MatIconModule
   ],
   exports: [WrapperComponent],
   bootstrap: [],

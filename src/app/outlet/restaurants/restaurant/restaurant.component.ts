@@ -49,8 +49,7 @@ export class RestaurantComponent {
               this.currentOutlet['img'] = item.img;
               this.currentOutlet['logo'] = item.logo;
               this.currentOutlet['hours'] = item.hours;
-            }
-             
+            } 
         })}
         ),
         map((urlId: any) => {
