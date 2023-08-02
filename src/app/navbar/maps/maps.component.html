@@ -1,8 +1,78 @@
-<body>
-  <input id="searchTbx" type="text" />
-  <input type="button" value="Search" (click)="searchMap()" />
-  <div id="map" style="width: 550px; height: 400px;"></div>
-  <div id="output" style="margin-left:10px;float:left;"></div>
-</body>
+<div class="container">
+  <ya-map [center]="[47.024512, 28.832157]" [zoom]="12">
+    <ya-placemark [geometry]="[47.024512, 28.832157]"></ya-placemark>
+  </ya-map>
+  <form class="input-form">
+    <div class="form-container">
+      <div class="form-wrapper">
+        <label class="form-lbl">
+          <input class="private-house" type="checkbox" name="is-private">
+          <span class="private-checkbox"></span>
+          <span class="private-txt">Private house</span>
+        </label>
+        <div class="form-address">
+          <label class="address-lbl">
+            Apt./Office
+            <div role="group" class="apt-grp">
+              <input name="appartment" type="text" id="appartment">
+            </div>
+          </label>
+          <label class="address-lbl">
+            Interphone
+            <div role="group" class="apt-grp">
+              <input name="entr_name" type="text" id="entr_name">
+            </div>
+          </label>
+          <label class="address-lbl">
+            Stair
+            <div role="group" class="apt-grp">
+              <input name="stair" type="text" id="stairs">
+            </div>
+          </label>
+          <label class="address-lbl">
+            Floor
+            <div role="group" class="apt-grp">
+              <input name="floor" type="text" id="floor">
+            </div>
+          </label>
+        </div>
+        <div class="comment">
+          <h3>Comment</h3>
+          <textarea name="comment" placeholder="Add a comment" class="cmnt-txt"></textarea>
+        </div>
+        <div class="typeof-container">
+          <h3 class="add-addrs">Add address</h3>
+          <div class="typeof">
+            <div class="home">
+              <div class="home-content">
+                <mat-icon>home</mat-icon>
+                <p class="type-txt">Home</p>
+              </div>
+            </div>
+            <div class="office">
+              <div class="office-content">
+                <mat-icon>work</mat-icon>
+                <p class="type-txt">Office</p>
+              </div>
+            </div>
+            <div class="other">
+              <div class="other-content">
+                <mat-icon>location_on</mat-icon>
+                <p class="type-txt">Other</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <footer>
+    <div class="save-btn">
+      <button type="button" class="save-addrs-btn">
+        Save
+      </button>
+    </div>
+  </footer>
+</div>
 
 

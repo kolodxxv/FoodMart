@@ -10,12 +10,17 @@ import { MatInputModule } from '@angular/material/input'
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppRoutingModule } from '../app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BingMapsAPILoader } from './shared/mapsLoader';
+import { AngularYandexMapsModule, YaConfig } from 'angular8-yandex-maps';
 
 import { NavbarComponent } from './navbar.component';
 import { ResizeDirective } from './shared/resize.directive';
 import { MapsComponent } from './maps/maps.component';
 
+// Map API 
+const mapConfig: YaConfig = {
+  apikey: '75fd6aa6-08b9-437d-8969-9eaec5021186',
+  lang: 'en_US',
+}
 
 @NgModule({
   imports: [
@@ -31,10 +36,11 @@ import { MapsComponent } from './maps/maps.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    AngularYandexMapsModule.forRoot(mapConfig)
   ],
   declarations: [NavbarComponent, ResizeDirective, MapsComponent],
   exports: [NavbarComponent],
-  bootstrap: [MapsComponent],
-  providers: [BingMapsAPILoader]
+  bootstrap: [MapsComponent]
+  
 })
 export class NavbarModule {}

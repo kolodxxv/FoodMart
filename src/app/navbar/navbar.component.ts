@@ -7,7 +7,7 @@ import { selecCountProducts, selectTotalPrice } from '../cart/store/selectors';
 import { SearchService } from '../shared/search.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MapsComponent } from './maps/maps.component';
-import { DialogConfig } from '@angular/cdk/dialog';
+
 
 
 @Component({

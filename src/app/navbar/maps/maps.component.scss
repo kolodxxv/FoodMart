@@ -1,0 +1,218 @@
+.container {
+  width: 550px;
+  height: 448px;
+}
+
+.input-form {
+  margin-top: 0px;
+  margin-inline: 0px;
+  margin-bottom: 0px;
+  padding: 20px;
+  width: 90%;
+}
+
+.form-container {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+
+// Private House ChckBx
+.form-lbl {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: top;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.private-house {
+  border: 0px;
+  clip: rect(0px, 0px, 0px, 0px);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0px;
+  overflow: hidden;
+  white-space: nowrap;
+  position: absolute;
+}
+
+.private-checkbox {
+  border: 2px solid rgb(119, 119, 119);
+  width: 10px;
+  cursor: default;
+  height: 10px;
+  border-radius: 6px;
+}
+
+// Form 
+.form-address {
+  margin-top: 0.5rem;
+  margin-inline: 0px;
+  margin-bottom: 0px;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(2, minmax(0px, 1fr));
+  padding-bottom: 15px;
+}
+
+.address-lbl {
+  max-width: 150px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.apt-grp {
+  width: 100%;
+  position: relative;
+}
+
+#appartment, #entr_name, #stairs, #floor {
+  margin-top: 6px;
+  width: 100%;
+  min-width: 0px;
+  outline: transparent solid 2px;
+  outline-offset: 2px;
+  position: relative;
+  appearance: none;
+  font-size: 1rem;
+  padding-inline-start: 1rem;
+  padding-inline-end: 1rem;
+  height: 2.5rem;
+  border-radius: 1rem;
+  border-width: 1px;
+  border-style: solid;
+  border-image: initial;
+  border-color: inherit;
+  background: inherit;
+}
+
+.cmnt-txt {
+  width: 100%;
+  min-width: 0px;
+  outline: transparent solid 2px;
+  outline-offset: 2px;
+  position: relative;
+  appearance: none;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  min-height: 80px;
+  line-height: 1.375;
+  vertical-align: top;
+  font-size: 14px;
+  padding-inline-start: 1rem;
+  padding-inline-end: 1rem;
+  height: 2.5rem;
+  border-radius: 1rem;
+  background: rgb(235, 236, 241);
+  font-weight: 500;
+  border: 0;
+  resize: none;
+}
+
+// Buttons types
+.typeof-container {
+  margin-top: 0.5rem;
+  margin-inline: 0px;
+  margin-bottom: 0px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+}
+
+.add-adrs {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.33;
+  margin-bottom: 15px;
+}
+
+.typeof {
+  margin-top: 0px;
+  margin-inline: 0px;
+  margin-bottom: 0px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  gap: 15px;
+}
+
+.home, .office, .other {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 94px;
+  border-radius: 1rem;
+  border-width: 1px;
+  border-style: solid;
+  border-image: initial;
+  border-color: transparent;
+  flex: 1 1 0%;
+  background: rgb(235, 236, 241);
+}
+
+.home-content, .office-content, .other-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.type-txt {
+  margin-top: 5px;
+  margin-inline: 0px;
+  margin-bottom: 0px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+// Footer
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline-start: 1.5rem;
+  padding-inline-end: 1.5rem;
+  padding: 10px;
+  box-shadow: 0px -1px 10px rgba(0, 0, 0, 0.15);
+  flex-direction: column;
+}
+
+.save-btn {
+  width: 100%;
+}
+
+.save-addrs-btn {
+  display: inline-flex;
+  appearance: none;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  white-space: nowrap;
+  vertical-align: middle;
+  outline: transparent solid 2px;
+  outline-offset: 2px;
+  width: 100%;
+  line-height: 1.2;
+  font-weight: 600;
+  border-radius: 1rem;
+  height: 46px;
+  min-width: 2.5rem;
+  font-size: 1rem;
+  padding-inline: 32px;
+  background: rgb(246, 0, 155);
+  color: rgb(255, 255, 255);
+}
