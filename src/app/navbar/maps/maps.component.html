@@ -2,7 +2,7 @@
   <ya-map [center]="[47.024512, 28.832157]" [zoom]="12">
     <ya-placemark [geometry]="[47.024512, 28.832157]"></ya-placemark>
   </ya-map>
-  <form class="input-form">
+  <form class="input-form" [formGroup]="userInputGroup" >
     <div class="form-container">
       <div class="form-wrapper">
         <label class="form-lbl">
@@ -10,29 +10,34 @@
           <span class="private-checkbox"></span>
           <span class="private-txt">Private house</span>
         </label>
+        <div></div>
         <div class="form-address">
           <label class="address-lbl">
             Apt./Office
             <div role="group" class="apt-grp">
-              <input name="appartment" type="text" id="appartment">
+              <input name="appartment" type="text" id="appartment"
+                required formControlName="apt">
             </div>
           </label>
           <label class="address-lbl">
             Interphone
             <div role="group" class="apt-grp">
-              <input name="entr_name" type="text" id="entr_name">
+              <input name="entr_name" type="text" id="entr_name"
+                required formControlName="int">
             </div>
           </label>
           <label class="address-lbl">
             Stair
             <div role="group" class="apt-grp">
-              <input name="stair" type="text" id="stairs">
+              <input name="stair" type="text" id="stairs"
+                required formControlName="stair">
             </div>
           </label>
           <label class="address-lbl">
             Floor
             <div role="group" class="apt-grp">
-              <input name="floor" type="text" id="floor">
+              <input name="floor" type="text" id="floor"
+                required formControlName="floor">
             </div>
           </label>
         </div>
@@ -68,7 +73,7 @@
   </form>
   <footer>
     <div class="save-btn">
-      <button type="button" class="save-addrs-btn">
+      <button type="submit" class="save-addrs-btn" (click)="onSubmit()">
         Save
       </button>
     </div>
