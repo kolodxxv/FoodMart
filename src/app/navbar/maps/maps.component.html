@@ -1,7 +1,22 @@
 <div class="container">
-  <ya-map [center]="[47.024512, 28.832157]" [zoom]="12">
-    <ya-placemark [geometry]="[47.024512, 28.832157]"></ya-placemark>
+  <div class="map-container">
+    <ya-map 
+    [center]="[47.024512, 28.832157]" 
+    [zoom]="13" 
+    (yaclick)="onMapClick($event)"
+    (ready)="onMapReady($event)"
+    [state]="{ controls: [] }"
+    >
   </ya-map>
+  </div>
+  <div class="map-search-container">
+    <div class="searchbar-container">
+      <div class="search-input-container">
+        <input placeholder="Street and number" class="search-input"
+        value="{{selectedAddress}}">
+      </div>
+    </div>
+  </div>
   <form class="input-form" [formGroup]="userInputGroup" >
     <div class="form-container">
       <div class="form-wrapper">
@@ -43,7 +58,7 @@
         </div>
         <div class="comment">
           <h3>Comment</h3>
-          <textarea name="comment" placeholder="Add a comment" class="cmnt-txt"></textarea>
+          <textarea formControlName="comment" name="comment" placeholder="Add a comment" class="cmnt-txt"></textarea>
         </div>
         <div class="typeof-container">
           <h3 class="add-addrs">Add address</h3>

@@ -26,6 +26,8 @@ export class NavbarComponent {
   public countProducts$: Observable<number>;
   public totalPrice$: Observable<number>;
   public currentUser = localStorage.getItem('username');
+  // Address
+  public selectedAddress?: string;
   
 
   constructor(
@@ -45,7 +47,6 @@ export class NavbarComponent {
       this.router.navigate([`/${url}`])
     }
   
-
   ngAfterViewInit() {
     setTimeout(() => {
     this.observer.observe(['(max-width: 900px)']).subscribe((res) => {
@@ -70,7 +71,10 @@ export class NavbarComponent {
   openDialog(){
     const dialogCongif = new MatDialogConfig();
     dialogCongif.position = { top: '0px'}
-    this.dialog.open(MapsComponent);
+    let dialogRef = this.dialog.open(MapsComponent, {data: this.selectedAddress});
+    dialogRef.afterClosed().subscribe(res => {
+      this.selectedAddress = res.data[1]
+    })
   }
 
 }

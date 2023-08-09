@@ -10,7 +10,8 @@
           <div class="geoloc">
             <button type="button" class="geo-btn" (click)="openDialog()">
               <mat-icon class="geo-img">location_on</mat-icon>
-              <span class="geo-txt">Add address</span>
+              <span *ngIf="!selectedAddress" class="geo-txt">Add address</span>
+              <span *ngIf="selectedAddress" class="geo-txt">{{selectedAddress}}</span>
               <mat-icon class="geo-arrow">keyboard_arrow_right</mat-icon>
             </button>
           </div>
