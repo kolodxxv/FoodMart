@@ -4,9 +4,14 @@
     [center]="[47.024512, 28.832157]" 
     [zoom]="13" 
     (yaclick)="onMapClick($event)"
-    (ready)="onMapReady($event)"
     [state]="{ controls: [] }"
     >
+    <ya-placemark
+    [geometry]="this.selectedCoords"
+    [properties]="placemarkPropperties"
+    [options]="placemarkOptions">
+
+    </ya-placemark>
   </ya-map>
   </div>
   <div class="map-search-container">
@@ -17,7 +22,7 @@
       </div>
     </div>
   </div>
-  <form class="input-form" [formGroup]="userInputGroup" >
+  <form class="input-form" [formGroup]="userInputGroup" (submit)="onSubmit()">
     <div class="form-container">
       <div class="form-wrapper">
         <label class="form-lbl">
@@ -31,34 +36,35 @@
             Apt./Office
             <div role="group" class="apt-grp">
               <input name="appartment" type="text" id="appartment"
-                required formControlName="apt">
+                required formControlName="aptCtrl" required>
             </div>
           </label>
           <label class="address-lbl">
             Interphone
             <div role="group" class="apt-grp">
               <input name="entr_name" type="text" id="entr_name"
-                required formControlName="int">
+                required formControlName="intCtrl" required>
             </div>
           </label>
           <label class="address-lbl">
             Stair
             <div role="group" class="apt-grp">
               <input name="stair" type="text" id="stairs"
-                required formControlName="stair">
+                required formControlName="stairCtrl" required>
             </div>
           </label>
           <label class="address-lbl">
             Floor
             <div role="group" class="apt-grp">
               <input name="floor" type="text" id="floor"
-                required formControlName="floor">
+                required formControlName="floorCtrl" required>
             </div>
           </label>
         </div>
         <div class="comment">
           <h3>Comment</h3>
-          <textarea formControlName="comment" name="comment" placeholder="Add a comment" class="cmnt-txt"></textarea>
+          <textarea formControlName="commentCtrl" name="comment" placeholder="Add a comment" 
+            class="cmnt-txt"></textarea>
         </div>
         <div class="typeof-container">
           <h3 class="add-addrs">Add address</h3>
@@ -88,7 +94,8 @@
   </form>
   <footer>
     <div class="save-btn">
-      <button type="submit" class="save-addrs-btn" (click)="onSubmit()">
+      <button type="submit" class="save-addrs-btn" (click)="onSubmit()" 
+      [disabled]="userInputGroup.invalid">
         Save
       </button>
     </div>
