@@ -7,13 +7,16 @@
   <div class="main">
     <!-- Banner -->
     <!-- TODO: CAROUSEL -->
-    <div class="banner-container" [style.width] = "responsive ? '680px' : '1250px'">
-      <img alt="banner" src="assets/img/banner1.png" class="banner">
+    <div class="banner-container" [style.width] = "responsive ? '500px' : '750px'">
+      <app-banner></app-banner>
     </div>
+    <!-- <div class="banner-container" [style.width] = "responsive ? '680px' : '1150px'">
+      <img alt="banner" src="assets/img/banner1.png" class="banner">
+    </div> -->
   <!-- Outlet Component -->
     <div class="container-buttons">
       <a *ngFor="let item of items; let i = index" 
-      [style.width] = "responsive ? '32%' : '440px'"
+      [style.width] = "responsive ? '32%' : '425px'"
       [ngClass]="{'active-service': selectedIndex === i, 'service': !toggle}"
       (click)="selectedIndex=i" [attr.aria-label]="i">
         <span>{{item}}</span></a>

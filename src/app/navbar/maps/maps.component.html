@@ -1,0 +1,106 @@
+<div class="container">
+  <div class="map-container">
+    <ya-map 
+    [center]="[47.024512, 28.832157]" 
+    [zoom]="13" 
+    (yaclick)="onMapClick($event)"
+    [state]="{ controls: [] }"
+    >
+    <ya-placemark
+    [geometry]="this.selectedCoords"
+    [properties]="placemarkPropperties"
+    [options]="placemarkOptions">
+
+    </ya-placemark>
+  </ya-map>
+  </div>
+  <div class="map-search-container">
+    <div class="searchbar-container">
+      <div class="search-input-container">
+        <input placeholder="Street and number" class="search-input"
+        value="{{selectedAddress}}">
+      </div>
+    </div>
+  </div>
+  <label class="form-lbl">
+    <!-- <mat-checkbox class="private-house" type="checkbox" name="is-private"></mat-checkbox>
+    <span class="private-checkbox"></span> -->
+    <mat-checkbox [(ngModel)]="this.privateBuilding"></mat-checkbox>
+    <span class="private-txt">Private house</span>
+  </label>
+  <form class="input-form" [formGroup]="userInputGroup" (submit)="onSubmit()">
+    <div class="form-container">
+      <div class="form-wrapper">
+        
+        <div></div>
+        <div class="form-address">
+          <label class="address-lbl">
+            Apt./Office
+            <div role="group" class="apt-grp">
+              <input name="appartment" type="text" id="appartment"
+                required formControlName="aptCtrl" required>
+            </div>
+          </label>
+          <label class="address-lbl">
+            Interphone
+            <div role="group" class="apt-grp">
+              <input name="entr_name" type="text" id="entr_name"
+                required formControlName="intCtrl" required>
+            </div>
+          </label>
+          <label class="address-lbl">
+            Stair
+            <div role="group" class="apt-grp">
+              <input name="stair" type="text" id="stairs"
+                required formControlName="stairCtrl" required>
+            </div>
+          </label>
+          <label class="address-lbl">
+            Floor
+            <div role="group" class="apt-grp">
+              <input name="floor" type="text" id="floor"
+                required formControlName="floorCtrl" required>
+            </div>
+          </label>
+        </div>
+        <div class="comment">
+          <h3>Comment</h3>
+          <textarea formControlName="commentCtrl" name="comment" placeholder="Add a comment" 
+            class="cmnt-txt"></textarea>
+        </div>
+        <div class="typeof-container">
+          <h3 class="add-addrs">Add address</h3>
+          <div class="typeof">
+            <div class="home">
+              <div class="home-content">
+                <mat-icon>home</mat-icon>
+                <p class="type-txt">Home</p>
+              </div>
+            </div>
+            <div class="office">
+              <div class="office-content">
+                <mat-icon>work</mat-icon>
+                <p class="type-txt">Office</p>
+              </div>
+            </div>
+            <div class="other">
+              <div class="other-content">
+                <mat-icon>location_on</mat-icon>
+                <p class="type-txt">Other</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <footer>
+    <div class="save-btn">
+      <button type="submit" class="save-addrs-btn" (click)="onSubmit()">
+        Save
+      </button>
+    </div>
+  </footer>
+</div>
+
+

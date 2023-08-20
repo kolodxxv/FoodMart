@@ -1,24 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
+
 import { WrapperRoutingModule } from './wrapper-routing.module';
 import { WrapperComponent } from './wrapper.component';
-
 import { SliderModule } from '../slider/slider.module';
 import { OutletModule } from '../outlet/outlet.module';
-import { BackgroundDirective } from './background.directive';
+import { BackgroundDirective } from './shared/directives/background.directive';
 import { NavbarModule } from '../navbar/navbar.module';
 import { CartModule } from '../cart/cart.module';
 import { FooterModule } from '../footer/footer.module';
-
-
-
-
+import { BannerComponent } from './banner/banner.component';
 
 
 @NgModule({
   declarations: [
     WrapperComponent,
-    BackgroundDirective
+    BackgroundDirective,
+    BannerComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +26,8 @@ import { FooterModule } from '../footer/footer.module';
     OutletModule,
     NavbarModule,
     CartModule,
-    FooterModule
+    FooterModule,
+    MatIconModule
   ],
   exports: [WrapperComponent],
   bootstrap: [],

@@ -1,0 +1,73 @@
+.body {
+  background-color: rgb(255, 255, 255);
+  max-width: 1440px;
+  margin-left: 20px;
+  margin-top: 50px;
+  padding-bottom: 20px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  overflow: hidden;
+  
+}
+
+.container {
+  display: flex;
+  gap: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  padding-inline: 0px;
+  list-style-type: none;
+  
+}
+
+.mat-mdc-tab-group {
+  width: 100%;
+  display: flex !important;
+}
+
+h1 {
+  font-size: 36px;
+  line-height: 44px;
+  padding-bottom: 20px;
+  margin-left: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.item {
+  display: block;
+  position: relative;
+  margin-bottom: 12px;
+  border-radius: 16px;
+  width: 97%;
+  height: 180px;
+  cursor: pointer;
+}
+
+.outlet-selector-label {
+  position: absolute;
+  top: 11px;
+  left: 15px;
+  color: white;
+  font-size: 20px;;
+  font-family: cursive;
+}
+
+img {
+  object-fit: cover;
+  width: 100%;
+  max-width: 100%;
+  height: 180px;
+  border-radius: 16px;
+  transition: none 0s ease 0s;
+}
+
+.logo {
+  width: 65px;
+  height: 65px;
+  border-radius: 10px;
+  position: absolute;
+  top: 100px;
+  left: 1px;
+  box-shadow: rgba(240, 240, 220, 0.45) 0px 5px 15px;
+  display: block;
+}

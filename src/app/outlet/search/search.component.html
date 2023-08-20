@@ -1,5 +1,26 @@
-<!-- <div class="search-container">
-  <input type="search" [(ngModel)]="enteredSearchValue" (input)="onSearchTextChanged()"
-  id="search-input" placeholder="Search">
+<app-navbar-component></app-navbar-component>
+<div class="body">
+  <div class="container">
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab label="Restaurants">
+        <ng-container class="items" *ngFor="let restaurant of outlets">
+          <li class="item" *ngIf="restaurant.label.toLowerCase().includes(inputValue)
+          || restaurant.foodTypeShortLabel.includes(inputValue)">
+            <img class="image" alt="provider-img" [src]="restaurant.img" 
+              (click)="redirectByEventType('restaurant', restaurant.outlet)">
+                <div class="outlet-selector-label">{{restaurant.label}}
+                  <img class="logo" src="{{restaurant.logo}}">
+                </div>
+          </li>
+        </ng-container>
+      </mat-tab>
+      <mat-tab label="Products">
+        <ng-container class="products" *ngFor=" let product of menu">
+          <li class="product" *ngIf="product.context.name.toLowerCase().includes(inputValue)">
+            <img class="product-image" alt="product" [src]="product.context.imageUrl">
+          </li>
+        </ng-container>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
 </div>
-   -->

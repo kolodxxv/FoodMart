@@ -10,6 +10,7 @@ import { groceryTypeModel } from './shared/models/grocery-model';
 import { Outlets } from '../outlet/restaurants/shared/models/restaurants-model';
 import { OutletsService } from '../outlet/restaurants/shared/services/outlets.service';
 
+
 @Component({
   selector: 'app-wrapper',
   templateUrl: './wrapper.component.html',

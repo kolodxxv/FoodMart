@@ -1,9 +1,13 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs'
 import { Store } from '@ngrx/store';
 import { selecCountProducts, selectTotalPrice } from '../cart/store/selectors';
+import { SearchService } from '../shared/search.service';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MapsComponent } from './maps/maps.component';
+
 
 
 @Component({
@@ -13,28 +17,36 @@ import { selecCountProducts, selectTotalPrice } from '../cart/store/selectors';
 })
 export class NavbarComponent {
 
+  // Search bar value
+  public inputValue!: string;
+  // Transition between views
   public responsive!: boolean;
   public isShowing!: boolean;
-  public searchText: string = '';
-
+  // Data 
   public countProducts$: Observable<number>;
   public totalPrice$: Observable<number>;
-  public currentUser = localStorage.getItem('username')
+  public currentUser = localStorage.getItem('username');
+  // Address
+  public selectedAddress?: string;
+  
 
   constructor(
     private observer: BreakpointObserver,
     public router: Router,
-    private store: Store
+    private store: Store,
+    private searchSrvc: SearchService,
+    private dialog: MatDialog
+
     ) {
       this.countProducts$ = store.select(selecCountProducts);
-      this.totalPrice$ = this.store.select(selectTotalPrice)
+      this.totalPrice$ = this.store.select(selectTotalPrice);
+     
     }
 
     public redirectByEventType(url: string): void {
       this.router.navigate([`/${url}`])
     }
   
-
   ngAfterViewInit() {
     setTimeout(() => {
     this.observer.observe(['(max-width: 900px)']).subscribe((res) => {
@@ -52,9 +64,17 @@ export class NavbarComponent {
     location.reload()
   }
 
-  onSearchTextEntered(value: string) {
-    this.searchText = value;
-    console.log(this.searchText)
+  search() {
+    this.searchSrvc.setInputValue(this.inputValue)
   }
-   
+
+  openDialog(){
+    const dialogCongif = new MatDialogConfig();
+    dialogCongif.position = { top: '0px'}
+    let dialogRef = this.dialog.open(MapsComponent, {data: this.selectedAddress});
+    dialogRef.afterClosed().subscribe(res => {
+      this.selectedAddress = res.data[1]
+    })
+  }
+
 }

@@ -9,11 +9,19 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input'
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppRoutingModule } from '../app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AngularYandexMapsModule, YaConfig } from 'angular8-yandex-maps';
+import { MatCheckboxModule } from '@angular/material/checkbox'
 
 import { NavbarComponent } from './navbar.component';
-import { ResizeDirective } from './resize.directive';
+import { ResizeDirective } from './shared/resize.directive';
+import { MapsComponent } from './maps/maps.component';
 
+// Map API 
+const mapConfig: YaConfig = {
+  apikey: '75fd6aa6-08b9-437d-8969-9eaec5021186',
+  lang: 'en_US',
+}
 
 @NgModule({
   imports: [
@@ -27,11 +35,14 @@ import { ResizeDirective } from './resize.directive';
     MatInputModule,
     FlexLayoutModule,
     AppRoutingModule,
-    FormsModule
-    
+    FormsModule,
+    ReactiveFormsModule,
+    MatCheckboxModule,
+    AngularYandexMapsModule.forRoot(mapConfig)
   ],
-  declarations: [NavbarComponent, ResizeDirective],
+  declarations: [NavbarComponent, ResizeDirective, MapsComponent],
   exports: [NavbarComponent],
-  bootstrap: [],
+  bootstrap: [MapsComponent]
+  
 })
 export class NavbarModule {}
