@@ -11,6 +11,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppRoutingModule } from '../app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularYandexMapsModule, YaConfig } from 'angular8-yandex-maps';
+import { MatCheckboxModule } from '@angular/material/checkbox'
 
 import { NavbarComponent } from './navbar.component';
 import { ResizeDirective } from './shared/resize.directive';
@@ -36,6 +37,7 @@ const mapConfig: YaConfig = {
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    MatCheckboxModule,
     AngularYandexMapsModule.forRoot(mapConfig)
   ],
   declarations: [NavbarComponent, ResizeDirective, MapsComponent],

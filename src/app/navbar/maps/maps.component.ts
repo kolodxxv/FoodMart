@@ -21,7 +21,11 @@ export class MapsComponent {
     }
   };
 
+  // User Input Info variable
   public currentAddres?: any[] = []
+  public privateBuilding = false;
+
+  // User selected address var
   public selectedAddress: any;
   public selectedCoords: any;
   
@@ -36,7 +40,7 @@ placemarkPropperties: ymaps.IPlacemarkProperties = {
 placemarkOptions: ymaps.IPlacemarkOptions = {
   iconLayout: 'default#image',
   iconImageHref: 'https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-512.png',
-  iconImageSize: [32, 32]
+  iconImageSize: [44, 44]
 
 }
 

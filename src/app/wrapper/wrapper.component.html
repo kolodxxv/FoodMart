@@ -16,7 +16,7 @@
   <!-- Outlet Component -->
     <div class="container-buttons">
       <a *ngFor="let item of items; let i = index" 
-      [style.width] = "responsive ? '32%' : '440px'"
+      [style.width] = "responsive ? '32%' : '425px'"
       [ngClass]="{'active-service': selectedIndex === i, 'service': !toggle}"
       (click)="selectedIndex=i" [attr.aria-label]="i">
         <span>{{item}}</span></a>

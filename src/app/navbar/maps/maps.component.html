@@ -22,14 +22,16 @@
       </div>
     </div>
   </div>
+  <label class="form-lbl">
+    <!-- <mat-checkbox class="private-house" type="checkbox" name="is-private"></mat-checkbox>
+    <span class="private-checkbox"></span> -->
+    <mat-checkbox [(ngModel)]="this.privateBuilding"></mat-checkbox>
+    <span class="private-txt">Private house</span>
+  </label>
   <form class="input-form" [formGroup]="userInputGroup" (submit)="onSubmit()">
     <div class="form-container">
       <div class="form-wrapper">
-        <label class="form-lbl">
-          <input class="private-house" type="checkbox" name="is-private">
-          <span class="private-checkbox"></span>
-          <span class="private-txt">Private house</span>
-        </label>
+        
         <div></div>
         <div class="form-address">
           <label class="address-lbl">
@@ -94,8 +96,7 @@
   </form>
   <footer>
     <div class="save-btn">
-      <button type="submit" class="save-addrs-btn" (click)="onSubmit()" 
-      [disabled]="userInputGroup.invalid">
+      <button type="submit" class="save-addrs-btn" (click)="onSubmit()">
         Save
       </button>
     </div>
