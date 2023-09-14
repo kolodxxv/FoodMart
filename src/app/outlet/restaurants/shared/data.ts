@@ -60,11 +60,11 @@ export const sample_menu: Menu[] = [
   context: 
   {
     id: '6',
-    name: 'Kebastos',
+    name: 'Kebab',
     price: '69 MDL',
     info: 'Kebab with chicken meat and vegetables',
     gr: '410 gr',
     tags: ['Kebab', 'Kebastos'],
-    imageUrl: 'https://starkebab.md/paperclip/App/Product/000/000/003/image/medium/Star%20Kebab_pui.jpg'
+    imageUrl: 'https://straus.s3.amazonaws.com/media/CACHE/images/products2/5d270115cd214214968370071c5535e5/51d3d6422236a93b8aa1c40c3fa2eb70.jpg'
   }}
 ] 

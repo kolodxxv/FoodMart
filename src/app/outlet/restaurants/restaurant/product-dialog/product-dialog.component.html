@@ -11,15 +11,16 @@
       <li><input type="checkbox">Mushrooms</li>
     </ul>
   </div>
-  <footer>
-    <div class="another">
-      <button class="minus" (click)="Minus()">-</button>
-      <span>{{productAmount}}</span>
-      <button class="plus" (click)="plus()">+</button>
-    </div>
-    <div class="price">{{this.price}}</div>
-    <div class="button">
-      <button class="add-button" (click)="buyProduct(data)">Add to cart</button>
-    </div>
-  </footer>
+ 
 </div>
+<footer>
+  <div class="another">
+    <button class="minus" (click)="Minus()">-</button>
+    <span>{{productAmount}}</span>
+    <button class="plus" (click)="plus()">+</button>
+  </div>
+  <div class="price">{{this.price}}</div>
+  <div class="button">
+    <button class="add-button" (click)="buyProduct(data)">Add to cart</button>
+  </div>
+</footer>

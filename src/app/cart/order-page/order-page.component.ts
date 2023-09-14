@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable, take } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { clearCart, RemoveProduct, addProduct, RemoveAll } from '../store/actions';
 import { selecCountProducts, selectAllProducts, selectGroupedCartEntries, selectTotalPrice } from '../store/selectors';
 import { Router } from '@angular/router';
@@ -13,7 +13,8 @@ import { Location } from '@angular/common';
 })
 export class OrderPageComponent {
 
-  public currentUser = localStorage.getItem('username')
+  public currentUser = localStorage.getItem('username');
+  public finalPrice?: number;
 
   cartEntries$: Observable<any>;
   countProducts$: Observable<number>;
@@ -31,6 +32,16 @@ export class OrderPageComponent {
     this.totalPrice$ = this.store.select(selectTotalPrice);
     this.allProds$ = this.store.select(selectAllProducts);
   }
+
+  ngOnInit() {
+    this.totalPrice$.pipe(
+      map(value => Number(value))
+    ).subscribe(value =>
+      this.finalPrice = value + 39
+      )
+  }
+
+  
 
   public addSome(entry: any) {
     this.store.dispatch(addProduct(entry.product))
@@ -53,7 +64,11 @@ export class OrderPageComponent {
   }
 
   public redirectBack(): void {
-    this.location.back()
+    if(this.router.url.startsWith('/')) {
+      this.router.navigate(['/']);
+    } else {
+      window.history.back();
+    }
   }
 
  

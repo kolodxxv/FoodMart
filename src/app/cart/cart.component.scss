@@ -9,6 +9,7 @@
 }
 
 .context {
+  height: 25px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -26,6 +27,7 @@
 
 .total-price {
   display: inline-flex;
+  align-items: center;
   justify-content: space-between;
   font-size: inherit;
 }
