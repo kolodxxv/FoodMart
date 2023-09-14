@@ -6,13 +6,9 @@
 <!-- Wrapper Component -->
   <div class="main">
     <!-- Banner -->
-    <!-- TODO: CAROUSEL -->
     <div class="banner-container" [style.width] = "responsive ? '500px' : '750px'">
       <app-banner></app-banner>
     </div>
-    <!-- <div class="banner-container" [style.width] = "responsive ? '680px' : '1150px'">
-      <img alt="banner" src="assets/img/banner1.png" class="banner">
-    </div> -->
   <!-- Outlet Component -->
     <div class="container-buttons">
       <a *ngFor="let item of items; let i = index" 

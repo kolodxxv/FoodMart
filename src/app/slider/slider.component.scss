@@ -1,17 +1,19 @@
 .product {
-  padding: 0px ;
+  padding: 0px;
   background-color: white;
 }
 
 .slider-wrap {
   position: relative;
   overflow: hidden;
-  height: 150px;
+  height: 80px;
+  
 }
 
 .slider-main {
   position: absolute;
-  width: 200%;
+  width: 100%;
+  margin-left: 15px;
 }
 
 .item {
@@ -38,6 +40,8 @@
   position: absolute;
 }
 
+// Buttons
+
 .prev {
   position: absolute;
   left: 15px;
@@ -55,6 +59,8 @@
   background: transparent;
   border: 0px;
 }
+
+// 
 
 img {
   height: 70%;

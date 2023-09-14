@@ -25,15 +25,7 @@ export const cartReducer = createReducer(
   }),
 
   on(RemoveAll, (entries, product) => {
-    const entriesClone: Menu[] = JSON.parse(JSON.stringify(entries));
-    const found = entriesClone.find(e => e.context.id == product.context.id);
-    entriesClone.forEach(found => {
-      entriesClone.splice(entriesClone.indexOf(found),)
-    })
-    if (found) {
-      entriesClone.splice(entriesClone.indexOf(found), 1)
-    }
-    return entriesClone;
+    return entries.filter(item => item.context.id !== product.context.id)
   })
 )
 

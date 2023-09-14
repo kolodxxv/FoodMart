@@ -37,5 +37,29 @@ export const type_list: foodTypeModel[] = [
     foodTypeShortLabel: 'bf',
     foodTypeId: '70',
     img: 'https://straus.s3.amazonaws.com/media/CACHE/images/category/pngegg_82_1/3c640434989577cf6c78dbd0342f9e25.png'},
-    
+  {
+    id: 8,
+    textValue: 'Pasta',
+    foodTypeShortLabel: 'pa',
+    foodTypeId: '80',
+    img: 'https://straus.s3.amazonaws.com/media/CACHE/images/category/pngegg_-_2021-08-19T005506_1/4e8ad083cd7bef937a843b6033f1a846.png'},
+  {
+    id: 9,
+    textValue: 'Pancakes',
+    foodTypeShortLabel: 'pc',
+    foodTypeId: '90',
+    img: 'https://straus.s3.amazonaws.com/media/CACHE/images/category/pngegg_-_2021-08-18T231720_1/eb11bfe50962eaebda228f1be7c33667.png'},
+  {
+    id: 10,
+    textValue: 'Alcohol',
+    foodTypeShortLabel: 'alc',
+    foodTypeId: '100',
+    img: 'https://straus.s3.amazonaws.com/media/CACHE/images/category/vin/33edc70aa878f2f7ad20e409cd178138.png'},
+  {
+    id: 11,
+    textValue: 'Bakery',
+    foodTypeShortLabel: 'bak',
+    foodTypeId: '110',
+    img: 'https://straus.s3.amazonaws.com/media/CACHE/images/category/panificatii/c4a05d8c440cd272e3b4082a7b0c4cf8.png'},
+  
 ]
