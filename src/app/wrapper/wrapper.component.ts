@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BreakpointObserver } from '@angular/cdk/layout';
 
@@ -9,6 +9,8 @@ import { groceryTypeModel } from './shared/models/grocery-model';
 
 import { Outlets } from '../outlet/restaurants/shared/models/restaurants-model';
 import { OutletsService } from '../outlet/restaurants/shared/services/outlets.service';
+import { DataService } from '../shared/data.service';
+
 
 
 @Component({
@@ -17,6 +19,9 @@ import { OutletsService } from '../outlet/restaurants/shared/services/outlets.se
   styleUrls: ['./wrapper.component.scss']
 })
 export class WrapperComponent {
+
+  // Server Info
+  public server_outlets: any;
 
   public foodArr: foodTypeModel[] = [] 
   public grocery: groceryTypeModel[] = []
@@ -31,6 +36,7 @@ export class WrapperComponent {
   public selectedIndex: any = 0;
 
   constructor(
+    private dataService: DataService,
     public foodSrvc: FoodService,
     public grcrSrvc: GroceryService,
     public outletSrvc: OutletsService,
@@ -41,6 +47,16 @@ export class WrapperComponent {
     this.foodArr = foodSrvc.getAll()
     this.grocery = grcrSrvc.getAll()
     this.outlets = outletSrvc.getAll()
+  }
+
+  ngOnInit(): void {
+    this.getOutletsData();
+  }
+
+  getOutletsData() {
+    this.dataService.getData().subscribe(res => {
+      console.log(res)
+    });
   }
 
   ngAfterViewInit() {
