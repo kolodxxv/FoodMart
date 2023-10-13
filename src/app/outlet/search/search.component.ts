@@ -27,7 +27,7 @@ export class SearchComponent {
     public router: Router
   ) {
     this.menu = menuSrvc.getAll();
-    this.outlets = outletSrvc.getAll();
+    // this.outlets = outletSrvc.getAll();
     this.searchSrvc.inputValue$.subscribe((inputValue) => {
       this.inputValue = inputValue;
     })

@@ -9,7 +9,6 @@ import { groceryTypeModel } from './shared/models/grocery-model';
 
 import { Outlets } from '../outlet/restaurants/shared/models/restaurants-model';
 import { OutletsService } from '../outlet/restaurants/shared/services/outlets.service';
-import { DataService } from '../shared/data.service';
 
 
 
@@ -20,12 +19,9 @@ import { DataService } from '../shared/data.service';
 })
 export class WrapperComponent {
 
-  // Server Info
-  public server_outlets: any;
-
   public foodArr: foodTypeModel[] = [] 
   public grocery: groceryTypeModel[] = []
-  public outlets: Outlets[]
+  // public outlets: Outlets[]
 
   // Responsive Breakpoint
   public responsive!: boolean;
@@ -36,7 +32,6 @@ export class WrapperComponent {
   public selectedIndex: any = 0;
 
   constructor(
-    private dataService: DataService,
     public foodSrvc: FoodService,
     public grcrSrvc: GroceryService,
     public outletSrvc: OutletsService,
@@ -46,17 +41,7 @@ export class WrapperComponent {
   ) {
     this.foodArr = foodSrvc.getAll()
     this.grocery = grcrSrvc.getAll()
-    this.outlets = outletSrvc.getAll()
-  }
-
-  ngOnInit(): void {
-    this.getOutletsData();
-  }
-
-  getOutletsData() {
-    this.dataService.getData().subscribe(res => {
-      console.log(res)
-    });
+    // this.outlets = outletSrvc.getAll()
   }
 
   ngAfterViewInit() {
@@ -72,12 +57,12 @@ export class WrapperComponent {
   }
 
   public selectType(arg: any): void {
-    let copyOfLocations: any[] = this.outlets; 
-    copyOfLocations = copyOfLocations.filter((item) => {
-      return item.foodTypeId === arg.foodTypeId; 
-    });
-    console.log(copyOfLocations)
-    this.redirectByEventType('restaurants', copyOfLocations)
+    // let copyOfLocations: any[] = this.outlets; 
+    // copyOfLocations = copyOfLocations.filter((item) => {
+    //   return item.foodTypeId === arg.foodTypeId; 
+    // });
+    // console.log(copyOfLocations)
+    // this.redirectByEventType('restaurants', copyOfLocations)
    } 
 
    public redirectByEventType(url: string, outletType: any): void {

@@ -3,20 +3,35 @@ import { Outlets } from './shared/models/restaurants-model';
 import { OutletsService } from './shared/services/outlets.service';
 import { Router } from '@angular/router';
 
+import { DataService } from 'src/app/shared/data.service';
+import { RestaurantModel } from 'src/app/shared/models/restaurant-model';
+
 @Component({
   selector: 'app-restaurants-component',
   templateUrl: './restaurants.component.html',
   styleUrls: ['./restaurants.component.scss']
 })
 export class RestaurantsComponent {
+
+  // Server Info
+  public server_outlets: any;
   
   public restaurantsArray: Outlets[] = []
 
   constructor(
-    outletsSrvc: OutletsService,
-    private router: Router
+    private dataService: DataService,
+    private router: Router,
   ) {
-    this.restaurantsArray = outletsSrvc.getAll();
+  }
+
+  ngOnInit(): void {
+    this.getOutletsData();
+  }
+
+  getOutletsData() {
+    this.dataService.getData().subscribe(res => {
+      this.server_outlets = res
+    });
   }
 
   public redirectByEventType(url: string, outlet: any): void {

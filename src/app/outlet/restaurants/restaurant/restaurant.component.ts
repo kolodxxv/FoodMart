@@ -1,13 +1,16 @@
 import { Component, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
 import { Menu } from '../shared/models/menu-model';
 import { MenuService } from '../shared/services/menu.service';
-import { ActivatedRoute, Router } from '@angular/router';
-import { take, map, tap } from 'rxjs';
-import { OutletsService } from '../shared/services/outlets.service';
-import { Outlets } from '../shared/models/restaurants-model';
+import { ActivatedRoute, Data, Router } from '@angular/router';
+import { take, map, tap, filter } from 'rxjs';
+import { RestaurantModel } from 'src/app/shared/models/restaurant-model';
+
+
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ProductDialogComponent } from './product-dialog/product-dialog.component';
-import { DialogConfig } from '@angular/cdk/dialog';
+
+
+import { DataService } from 'src/app/shared/data.service';
 
 
 
@@ -20,7 +23,7 @@ import { DialogConfig } from '@angular/cdk/dialog';
 export class RestaurantComponent {
 
   public menu: Menu[] = [];
-  public outlets: Outlets[] = [];
+  public outlets: any;
 
   public currentOutlet: {[key : string]: any[]} = {};
   public currentProduct: any;
@@ -30,38 +33,41 @@ export class RestaurantComponent {
     public router: Router,
     private readonly route: ActivatedRoute,
     private cdr: ChangeDetectorRef,
-    public outletSrvc: OutletsService,
+    private dataService: DataService,
     private dialog: MatDialog
     ) { 
       this.menu = menuSrvc.getAll();
-      this.outlets = outletSrvc.getAll();
+      
+    }
+
+    ngOnInit(): void {
+      this.dataService.getData().subscribe(res  => {
+        this.outlets = res;
+        this.route.params
+          .pipe(
+            take(1),
+            tap((urlId: any) => {
+              this.outlets = this.outlets.filter((item: any) => {
+                if (item.outlet === urlId['id'].toLowerCase()) {
+                  this.currentOutlet['name'] = item.label;
+                  this.currentOutlet['img'] = item.img;
+                  this.currentOutlet['logo'] = item.logo;
+                  this.currentOutlet['hours'] = item.hours;
+                }
+              })
+            }),
+          map((urlId: any) => {
+            this.menu = this.menu.filter((item: any) => {
+              return item.outlet.toLowerCase() === urlId['id'].toLowerCase();
+            });
+            })
+          )
+          .subscribe()
+      });
     }
 
   ngAfterViewInit(): void {
     this.cdr.detectChanges();
-    this.route.params
-      .pipe(
-        take(1),
-        tap((urlId: any) => { 
-          this.outlets = this.outlets.filter((item: any) => {
-            if(item.outlet === urlId['id'].toLowerCase()) {
-              this.currentOutlet['name'] = item.label;
-              this.currentOutlet['img'] = item.img;
-              this.currentOutlet['logo'] = item.logo;
-              this.currentOutlet['hours'] = item.hours;
-            } 
-        })}
-        ),
-        map((urlId: any) => {
-          this.menu = this.menu.filter((item: any) => {
-            return item.outlet.toLowerCase() === urlId['id'].toLowerCase();
-          });
-        }),
-        
-      )
-      .subscribe();
-
-    
   }
 
   ngDoCheck() {

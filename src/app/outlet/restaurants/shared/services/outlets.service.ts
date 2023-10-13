@@ -1,15 +1,22 @@
 import { Injectable } from '@angular/core';
 import { Outlets } from '../models/restaurants-model';
-import { sample_outlets } from '../restaurants-data';
+import { DataService } from 'src/app/shared/data.service';
+// import { sample_outlets } from '../restaurants-data';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OutletsService {
 
-  constructor() { }
+  constructor(
+    private dataService: DataService
+  ) { }
 
-  getAll(): Outlets[] {
-    return sample_outlets;
-  }
+  // getAll(): Outlets[] {
+  //     this.dataService.getData().subscribe(res => {
+  //       this.sample_outlets = res
+  //   })
+  // }
+  //   return sample_outlets;
+  // }
 }

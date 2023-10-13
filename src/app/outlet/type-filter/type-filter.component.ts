@@ -28,7 +28,7 @@ export class TypeFilterComponent {
 
   ) {
     this.menu = menuSrvc.getAll();
-    this.outlets = outletSrvc.getAll();
+    // this.outlets = outletSrvc.getAll();
     
   }
 
