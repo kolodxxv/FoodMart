@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOutletsTable extends Migration
+class CreateMenu extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,15 @@ class CreateOutletsTable extends Migration
      */
     public function up()
     {
-        Schema::create('outlets', function (Blueprint $table) {
-            $table->id();
+        Schema::create('menu', function (Blueprint $table) {
             $table->string('outlet');
-            $table->string('label');
-            $table->string('foodtype');
-            $table->string('img');
-            $table->string('logo');
-            $table->string('hours');
-            $table->timestamps();
+            $table->integer('id');
+            $table->string('name');
+            $table->integer('price');
+            $table->string('info');
+            $table->integer('mass');
+            $table->string('tags');
+            $table->string('imageUrl');
         });
     }
 
@@ -32,6 +32,6 @@ class CreateOutletsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('outlets');
+        Schema::dropIfExists('menu');
     }
 }

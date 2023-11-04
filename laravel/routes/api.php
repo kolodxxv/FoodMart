@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OutletController;
+use App\Http\Controllers\MenuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,9 @@ Route::get('/outlets', [OutletController::class, 'getOutlet']);
 
 // Get specific outlet
 Route::get('outlet/{id}', [OutletController::class, 'getOutletById']);
+
+// Get the menu
+Route::get('/menu', [MenuController::class, 'getMenu']);
+
+// Get specific menu item
+Route::get('menu/{id}' , [MenuController:: class, 'getMenuById']);

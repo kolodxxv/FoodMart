@@ -2,8 +2,8 @@ import { Component, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/
 import { Menu } from '../shared/models/menu-model';
 import { MenuService } from '../shared/services/menu.service';
 import { ActivatedRoute, Data, Router } from '@angular/router';
-import { take, map, tap, filter } from 'rxjs';
-import { RestaurantModel } from 'src/app/shared/models/restaurant-model';
+import { take, map, tap, filter, combineLatest } from 'rxjs';
+
 
 
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
@@ -24,7 +24,8 @@ export class RestaurantComponent {
 
   public menu: Menu[] = [];
   public outlets: any;
-
+  public menu_srv: any;
+  
   public currentOutlet: {[key : string]: any[]} = {};
   public currentProduct: any;
 
@@ -36,8 +37,6 @@ export class RestaurantComponent {
     private dataService: DataService,
     private dialog: MatDialog
     ) { 
-      this.menu = menuSrvc.getAll();
-      
     }
 
     ngOnInit(): void {
@@ -45,7 +44,6 @@ export class RestaurantComponent {
         this.outlets = res;
         this.route.params
           .pipe(
-            take(1),
             tap((urlId: any) => {
               this.outlets = this.outlets.filter((item: any) => {
                 if (item.outlet === urlId['id'].toLowerCase()) {
@@ -56,14 +54,20 @@ export class RestaurantComponent {
                 }
               })
             }),
-          map((urlId: any) => {
-            this.menu = this.menu.filter((item: any) => {
-              return item.outlet.toLowerCase() === urlId['id'].toLowerCase();
-            });
-            })
           )
           .subscribe()
       });
+      this.dataService.getMenu().subscribe(res => {
+        this.menu_srv = res;
+        this.route.params
+        .pipe(
+          tap((urlId: any) => {
+            this.menu_srv = this.menu_srv.filter((item: any) => {
+              return item.outlet.toLowerCase() === urlId['id'].toLowerCase().replace("'", '');
+            })
+          })
+        ).subscribe()
+      })
     }
 
   ngAfterViewInit(): void {

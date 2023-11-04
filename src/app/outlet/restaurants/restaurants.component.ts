@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { Outlets } from './shared/models/restaurants-model';
-import { OutletsService } from './shared/services/outlets.service';
 import { Router } from '@angular/router';
 
 import { DataService } from 'src/app/shared/data.service';
-import { RestaurantModel } from 'src/app/shared/models/restaurant-model';
+
 
 @Component({
   selector: 'app-restaurants-component',

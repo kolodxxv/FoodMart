@@ -2,7 +2,8 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { tap, map, Observable } from "rxjs";
 
-import { RestaurantInfo, RestaurantModel } from "./models/restaurant-model";
+import { RestaurantModel } from "./models/restaurant-model";
+import { MenuModel } from './models/menu-model';
 
 
 @Injectable({
@@ -19,6 +20,11 @@ export class DataService {
     getData(): Observable<RestaurantModel> {
         return this.httpClient.get<RestaurantModel>(
             'http://127.0.0.1:8000/api/outlets')
+    }
+
+    getMenu(): Observable<MenuModel> {
+        return this.httpClient.get<MenuModel>(
+            'http://127.0.0.1:8000/api/menu')
     }
 
     getOutletsData() {
