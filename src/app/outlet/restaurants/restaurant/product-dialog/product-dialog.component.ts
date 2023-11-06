@@ -1,9 +1,10 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
-import { Menu } from '../../shared/models/menu-model';
-import { sample_menu } from '../../shared/data';
 import { addProduct } from 'src/app/cart/store/actions';
+
+import { MenuModel } from 'src/app/shared/models/menu-model';
+import { DataService } from 'src/app/shared/data.service';
 
 @Component({
   selector: 'app-product-dialog',
@@ -14,17 +15,22 @@ export class ProductDialogComponent {
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
     private store: Store,
-    public dialogRef: MatDialogRef<ProductDialogComponent>
+    public dialogRef: MatDialogRef<ProductDialogComponent>,
+    private dataService: DataService
     ) { }
 
   public productAmount: number = 1;
-  public price: number = parseInt(this.data.context.price);
+  public price: number = parseInt(this.data.price);
+  public menu_srv: any;
 
-  public products(): Menu[] {
-    return sample_menu
+  public products(): MenuModel[] {
+    this.dataService.getMenu().subscribe(res => {
+      this.menu_srv = res;
+    })
+    return this.menu_srv
   }
 
-  public buyProduct(product: Menu) {
+  public buyProduct(product: MenuModel) {
     this.store.dispatch(addProduct(product))
     this.dialogRef.close()
   }
@@ -37,7 +43,5 @@ export class ProductDialogComponent {
     this.productAmount ++;
   }
   
-
-
  
 }

@@ -1,23 +1,23 @@
-import { Menu } from "src/app/outlet/restaurants/shared/models/menu-model";
 import { ActionReducer, UPDATE, createReducer, on, INIT } from "@ngrx/store";
 import { addProduct, clearCart, RemoveProduct, RemoveAll } from "./actions";
+import { MenuModel } from "src/app/shared/models/menu-model";
 
 
-export const InitialCartEntries: Menu[] = [];
+export const InitialCartEntries: MenuModel[] = [];
 
 export const cartReducer = createReducer(
   InitialCartEntries,
   on(clearCart, _ => []),
 
   on(addProduct, (entries, product) => {
-    const entriesClone: Menu[] = JSON.parse(JSON.stringify(entries));
+    const entriesClone: MenuModel[] = JSON.parse(JSON.stringify(entries));
     entriesClone.push(product);
     return entriesClone;
   }),
 
   on(RemoveProduct, (entries, product) => {
-    const entriesClone: Menu[] = JSON.parse(JSON.stringify(entries));
-    const found = entriesClone.find(e => e.context.id == product.context.id);
+    const entriesClone: MenuModel[] = JSON.parse(JSON.stringify(entries));
+    const found = entriesClone.find(e => e.id == product.id);
     if (found) {
       entriesClone.splice(entriesClone.indexOf(found), 1)
     }
@@ -25,7 +25,7 @@ export const cartReducer = createReducer(
   }),
 
   on(RemoveAll, (entries, product) => {
-    return entries.filter(item => item.context.id !== product.context.id)
+    return entries.filter(item => item.id !== product.id)
   })
 )
 
