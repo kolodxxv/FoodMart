@@ -1,8 +1,7 @@
 import { Component, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
-import { Menu } from '../shared/models/menu-model';
-import { MenuService } from '../shared/services/menu.service';
-import { ActivatedRoute, Data, Router } from '@angular/router';
-import { take, map, tap, filter, combineLatest } from 'rxjs';
+
+import { ActivatedRoute, Router } from '@angular/router';
+import { tap, forkJoin, Subject, takeUntil } from 'rxjs';
 
 
 
@@ -22,15 +21,15 @@ import { DataService } from 'src/app/shared/data.service';
 })
 export class RestaurantComponent {
 
-  public menu: Menu[] = [];
   public outlets: any;
   public menu_srv: any;
   
   public currentOutlet: {[key : string]: any[]} = {};
   public currentProduct: any;
 
+  private unsubscribe$ = new Subject<void>();
+
   constructor(
-    private menuSrvc: MenuService,
     public router: Router,
     private readonly route: ActivatedRoute,
     private cdr: ChangeDetectorRef,
@@ -40,8 +39,18 @@ export class RestaurantComponent {
     }
 
     ngOnInit(): void {
-      this.dataService.getData().subscribe(res  => {
-        this.outlets = res;
+
+      forkJoin({
+        data: this.dataService.getData(),
+        menu: this.dataService.getMenu()
+      })
+      .pipe(
+        takeUntil(this.unsubscribe$)
+      )
+      .subscribe(({ data, menu }) => {
+        this.outlets = data;
+        this.menu_srv = menu;
+
         this.route.params
           .pipe(
             tap((urlId: any) => {
@@ -52,23 +61,17 @@ export class RestaurantComponent {
                   this.currentOutlet['logo'] = item.logo;
                   this.currentOutlet['hours'] = item.hours;
                 }
-              })
-            }),
-          )
-          .subscribe()
-      });
-      this.dataService.getMenu().subscribe(res => {
-        this.menu_srv = res;
-        this.route.params
-        .pipe(
-          tap((urlId: any) => {
-            this.menu_srv = this.menu_srv.filter((item: any) => {
-              return item.outlet.toLowerCase() === urlId['id'].toLowerCase().replace("'", '');
+              });
+
+              this.menu_srv = this.menu_srv.filter((item: any) => {
+                return item.outlet.toLowerCase() 
+                    === urlId['id'].toLowerCase();
+              });
             })
-          })
-        ).subscribe()
-      })
-    }
+          )
+          .subscribe();
+      });
+  }
 
   ngAfterViewInit(): void {
     this.cdr.detectChanges();
@@ -76,6 +79,11 @@ export class RestaurantComponent {
 
   ngDoCheck() {
     this.cdr.markForCheck();
+  }
+
+  ngOnDestroy() {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
   }
 
   openDialog(){

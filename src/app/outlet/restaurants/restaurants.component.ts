@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Outlets } from './shared/models/restaurants-model';
 import { Router } from '@angular/router';
 
 import { DataService } from 'src/app/shared/data.service';
@@ -14,8 +13,6 @@ export class RestaurantsComponent {
 
   // Server Info
   public server_outlets: any;
-  
-  public restaurantsArray: Outlets[] = []
 
   constructor(
     private dataService: DataService,

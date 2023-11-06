@@ -1,10 +1,10 @@
 <div class="container">
   <div class="context">
     <div class="logo-container">
-      <img alt="product-logo" [src]='data.context.imageUrl'>
+      <img alt="product-logo" [src]='data.imageUrl'>
     </div>
-    <div class="name">{{data.context.name}}</div>
-    <div class="description">{{data.context.info}}</div>
+    <div class="name">{{data.name}}</div>
+    <div class="description">{{data.info}}</div>
     <ul>
       <li><input type="checkbox">Mustard</li>
       <li><input type="checkbox">Extra cheese</li>
@@ -19,7 +19,7 @@
     <span>{{productAmount}}</span>
     <button class="plus" (click)="plus()">+</button>
   </div>
-  <div class="price">{{this.price}}</div>
+  <div class="price">{{this.price}} MDL</div>
   <div class="button">
     <button class="add-button" (click)="buyProduct(data)">Add to cart</button>
   </div>

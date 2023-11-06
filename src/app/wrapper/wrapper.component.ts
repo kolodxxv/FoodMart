@@ -7,8 +7,6 @@ import { foodTypeModel } from './shared/models/food-model';
 import { GroceryService } from './shared/services/grocery.service';
 import { groceryTypeModel } from './shared/models/grocery-model';
 
-import { Outlets } from '../outlet/restaurants/shared/models/restaurants-model';
-import { OutletsService } from '../outlet/restaurants/shared/services/outlets.service';
 
 
 
@@ -34,7 +32,6 @@ export class WrapperComponent {
   constructor(
     public foodSrvc: FoodService,
     public grcrSrvc: GroceryService,
-    public outletSrvc: OutletsService,
     public router: Router,
     public observer: BreakpointObserver
 

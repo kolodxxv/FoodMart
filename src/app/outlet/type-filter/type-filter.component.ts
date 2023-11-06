@@ -2,10 +2,7 @@ import { Component, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/
 import { Router, ActivatedRoute } from '@angular/router';
 import { take, map, tap } from 'rxjs';
 
-import { OutletsService } from '../restaurants/shared/services/outlets.service';
-import { Outlets } from '../restaurants/shared/models/restaurants-model';
-import { MenuService } from '../restaurants/shared/services/menu.service';
-import { Menu } from '../restaurants/shared/models/menu-model';
+
 
 @Component({
   selector: 'app-type-filter',
@@ -15,22 +12,16 @@ import { Menu } from '../restaurants/shared/models/menu-model';
 })
 export class TypeFilterComponent {
 
-  public menu: Menu[] = [];
-  public outlets: Outlets[] = [];
+  public menu: any;
+  public outlets: any;
 
   constructor(
     public router: Router,
     private readonly route: ActivatedRoute,
     private cdr: ChangeDetectorRef,
-    public menuSrvc: MenuService,
-    public outletSrvc: OutletsService,
   
 
-  ) {
-    this.menu = menuSrvc.getAll();
-    // this.outlets = outletSrvc.getAll();
-    
-  }
+  ) {}
 
   ngAfterViewInit(): void {
     this.cdr.detectChanges();

@@ -13,7 +13,7 @@
                 <h1>{{ currentOutlet['name'] }}</h1>
               </div>
               <div class="hours">
-                <h4>{{ currentOutlet['hours'] }}</h4>
+                <h4>Closes: {{ currentOutlet['hours'] }}</h4>
               </div>
               <div class="payment"></div>
             </div>
@@ -25,7 +25,7 @@
     </div>
   </div>
   <div class="container">
-    <ng-container *ngIf="menu_srv.length else emptyMenuContainer">
+    <ng-container *ngIf="menu_srv else emptyMenuContainer">
       <ng-container *ngFor="let food of menu_srv; let i = index">
         <div class="item" (click)="currentProduct = food; openDialog()">
           <img id="food-image" [src]="food.imageUrl" [alt]="food.name"/>
@@ -37,7 +37,7 @@
               {{food.info}}
             </div>
             <button type="button" class="price">
-              {{food.price}}
+              {{food.price}} MDL
             </button>
           </div>
         </div>

@@ -1,39 +1,39 @@
-import { Menu } from "src/app/outlet/restaurants/shared/models/menu-model";
+import { MenuModel } from "src/app/shared/models/menu-model";
 import { createFeatureSelector, createSelector } from "@ngrx/store";
 
 
 
 export interface ProductGroup {
-  product: Menu;
+  product: MenuModel;
   count: number;
 }
 
 export const selecCountProducts = createSelector(
   createFeatureSelector('cartEntries'),
-  (state: Menu[]) => {
+  (state: MenuModel[]) => {
     return state.length;
   }
   );
 
   export const selectTotalPrice = createSelector(
     createFeatureSelector('cartEntries'), 
-    (state: Menu[]) => {
+    (state: MenuModel[]) => {
       var totalPrice = 0;
-      state.forEach(p => totalPrice += parseInt(p.context.price));
+      state.forEach(p => totalPrice += p.price);
       return totalPrice;
     }
   );
 
   export const selectAllProducts = createSelector(
     createFeatureSelector('cartEntries'),
-    (state: Menu[]) => {
+    (state: MenuModel[]) => {
       var allProds: Map<string, ProductGroup> = new Map;
       
       state.forEach(item => {
-        if (allProds.get(item.context.id)) {
-          (allProds.get(item.context.id) as ProductGroup).count++;
+        if (allProds.get(item.id.toString())) {
+          (allProds.get(item.id.toString()) as ProductGroup).count++;
         } else { 
-          allProds.set(item.context.id, {product: item, count: 1})
+          allProds.set(item.id.toString(), {product: item, count: 1})
         }
         })
 
@@ -45,14 +45,14 @@ export const selecCountProducts = createSelector(
 
   export const selectGroupedCartEntries = createSelector(
     createFeatureSelector('cartEntries'),
-    (state: Menu[]) => {
+    (state: MenuModel[]) => {
       var map: Map<string, ProductGroup> = new Map;
 
       state.forEach(p => {
-        if (map.get(p.context.id)) {
-          (map.get(p.context.id) as ProductGroup).count++;
+        if (map.get(p.id.toString())) {
+          (map.get(p.id.toString()) as ProductGroup).count++;
         } else {
-          map.set(p.context.id, { product: p, count: 1})
+          map.set(p.id.toString(), { product: p, count: 1})
         }
       })
 
