@@ -2,7 +2,7 @@
 
 ***Food Delivery App*** 
 
-The app’s user interface is intuitive and easy to use, making it simple to find what you’re looking for. You can add restaurants and their menu, then look them up by cuisine, location, or price range, and filter your results to find the perfect meal for any occasion.
+ The app’s user interface is intuitive and easy to use, making it simple to find what you’re looking for. You can add restaurants and their menu, then look them up by cuisine, location, or price range, and filter your results to find the perfect meal for any occasion.
 
 FoodEase is built using the latest technologies to ensure that it is fast, reliable, and secure. The front-end of the app was developed using Angular and RxJS for the cart system, and Yandex API for maps. On the other hand, the backend of the app was developed using PHP and Laravel.
 
@@ -17,12 +17,12 @@ FoodEase is built using the latest technologies to ensure that it is fast, relia
 
 ***Prerequisites***
 
-Before you begin, make sure your development environment includes Node.js® and an npm package manager, PHP and Composer dependency manager. Also MySQL and database user configuration will be required.
+Before you begin, make sure that your development environment includes Node.js® and an npm package manager, as well as Composer - a PHP dependency manager. Additionally, you will need MySQL and database user configuration
 
 ***Frontend:*** 
-<pre >    cd FoodMart 
-    npm install 
-    ng serve  </pre>
+<pre >   cd FoodMart 
+   npm install 
+   ng serve  </pre>
 ***Backend:***
 <pre >
    cd laravel
